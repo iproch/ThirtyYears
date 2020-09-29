@@ -1,0 +1,109 @@
+{% if section.settings.enable_recently_viewed %}
+  <div
+    class="recently-viewed-products clearfix collection"
+    data-product-handle="{{ product.handle }}"
+    data-product-url="{% if routes.root_url != '/' %}{{ routes.root_url }}{% endif %}/products/PLACEHOLDER/?view=recently-used-grid"
+    data-wetheme-section-type="template--product--recently-viewed"
+    data-wetheme-section-id="{{ section.id }}"
+    data-quick-shop="{{ section.settings.quick_shop_enable_recently_viewed }}"
+    data-show-reviews="{{ settings.show_reviews }}"
+    style="display: none"
+  >
+    <div class="wrapper{% if section.settings.recently_viewed_match_height %} products--match-height{% endif %}" role="main">
+
+      {% unless section.settings.recently_viewed_title == blank %}
+        <div class="sitewide--title-wrapper">
+          <h2 class="page--title">{{ section.settings.recently_viewed_title }}</h2>
+        </div>
+      {% endunless %}
+
+      <div class="swiper-container">
+        <div class="swiper-wrapper" id="recently-viewed-products"></div>
+      </div>
+      <div class="swiper-button--prev">
+        <i class="fa fa-chevron-left"></i>
+      </div>
+      <div class="swiper-button--next">
+        <i class="fa fa-chevron-right"></i>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": {
+      "en": "Recently viewed",
+      "de": "Zuletzt angesehen",
+      "es": "Visitado recientemente",
+      "fr": "Récemment consulté",
+      "pt-PT": "Recentemente visualizado"
+    },
+    "settings": [
+      {
+          "type": "header",
+          "content": {
+              "en": "Recently viewed",
+              "de": "Zuletzt angesehen",
+              "es": "Visitado recientemente",
+              "fr": "Récemment consulté",
+              "pt-PT": "Recentemente visualizado"
+          }
+      },
+      {
+          "type": "checkbox",
+          "id": "enable_recently_viewed",
+          "label": {
+              "en": "Enable",
+              "de": "Aktivieren",
+              "es": "Habilitar",
+              "fr": "Activer",
+              "pt-PT": "Ativar efeito de paralaxe"
+          },
+          "default": true
+      },
+      {
+          "type": "text",
+          "id": "recently_viewed_title",
+          "label": {
+              "en": "Heading",
+              "de": "Überschrift",
+              "es": "Encabezado",
+              "fr": "Rubrique",
+              "pt-PT": "Título"
+          },
+          "default": {
+              "en": "Recently viewed products",
+              "de": "Zuletzt angesehene Produkte",
+              "es": "Productos visitados recientemente",
+              "fr": "Produits récemment consultés",
+              "pt-PT": "Produtos recentemente visualizados"
+          }
+      },
+      {
+          "type": "checkbox",
+          "id": "quick_shop_enable_recently_viewed",
+          "label": {
+              "en": "Show 'Quick view'",
+              "de": "Schnellansicht' anzeigen",
+              "es": "Mostrar 'Vista rápida'",
+              "fr": "Afficher 'Vue rapide'.",
+              "pt-PT": "Mostrar \"Visualização rápida\""
+          },
+          "default": false
+      },
+      {
+          "type": "checkbox",
+          "id": "recently_viewed_match_height",
+          "label": {
+              "en": "Enable auto-height",
+              "de": "Automatische Höhe aktivieren",
+              "es": "Habilitar altura automática",
+              "fr": "Activer la hauteur automatique",
+              "pt-PT": "Ativar configuração automática de altura"
+          },
+          "default": false
+      }
+   ]
+}
+{% endschema %}
