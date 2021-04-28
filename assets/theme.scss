@@ -46,7 +46,7 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large', 'extra-large');
 // Button colors
 $saleBadgeColor: #952525;
 $soldOutBadgeColor: #000;
-$badgeFontColor: #fff;
+$badgeFontColor: #ffffff;
 
 $primaryBtnTextColor: #f8f8f8;
 $primaryBtnBgColor: #000;
@@ -54,31 +54,31 @@ $primaryBtnBgHoverColor: #1e1d1d;
 $primaryBtnTextHoverColor: #f8f8f8;
 
 $secondaryBtnTextColor: #f8f8f8;
-$secondaryBtnBgColor: #818181;
+$secondaryBtnBgColor: #000000;
 $seconaryBtnBgHoverColor: #333;
 $seconaryBtnBgTextHoverColor: #f8f8f8;
 
 // Text colors
-$textColor: #333;
-$linkColor: #333;
+$textColor: #000000;
+$linkColor: #000000;
 $onSaleColor: #952525;
 
 // Backgrounds
-$bodyColor: #fff;
-$bodySecondaryColor: #f8f8f8;
-$cartBackgroundColor: #333;
+$bodyColor: #ffffff;
+$bodySecondaryColor: #fafafa;
+$cartBackgroundColor: #c3cdbb;
 $placeholderBackground: rgba(120, 129, 136, 0.1);
 $htmlBgColor: #fff;
 
 // Border colors
-$borderColor: rgba(51, 51, 51, 0.5);
+$borderColor: rgba(0, 0, 0, 0.5);
 
 // Header
-$headerColor: #f8f8f8;
+$headerColor: #ffffff;
 $headerBorderColor: rgba(0,0,0,0);
 $overlayHeaderTextColor: #f8f8f8;
-$navTextColor: #333;
-$navTextHover: #595959;
+$navTextColor: #000000;
+$navTextHover: #c3cdbb;
 
 // Color schemes
 $colorSchemeLightBackground: #e8e8e8;
@@ -87,19 +87,19 @@ $colorSchemeLightText: #333;
 $colorSchemeFeatureBackground: #333;
 $colorSchemeFeatureText: #f8f8f8;
 
-$colorSchemeDarkBackground: #333;
+$colorSchemeDarkBackground: #000000;
 $colorSchemeDarkText: #f8f8f8;
 
 // Overlay colors
 $overlayColor: #000; // overlays on images and when you open the drawer
 
 // Collection page colors
-$filterBgColor: rgba(51, 51, 51, 0.1);
+$filterBgColor: rgba(0, 0, 0, 0.1);
 
 // Site footer
-$colorFooterBg: #f8f8f8;
-$colorFooterText: #636363;
-$colorFooterBorder: rgba(99, 99, 99, 0.1);
+$colorFooterBg: #c7c7c7;
+$colorFooterText: #ffffff;
+$colorFooterBorder: rgba(255, 255, 255, 0.1);
 
 // Helper colors
 $disabledGrey: #f6f6f6;
@@ -110,18 +110,18 @@ $successColor: #56ad6a;
 $successBgColor: #ecfef0;
 
 // Popup
-$popupTextColor: #f8f8f8;
-$popupBgColor: #333;
+$popupTextColor: #ffffff;
+$popupBgColor: #000000;
 
 // Drawers
-$menuDrawerColor: #333;
+$menuDrawerColor: #000000;
 $menuDrawerTextColor: #f8f8f8;
 $menuDrawerBorderColor: rgba(248, 248, 248, 0.1);
-$menuDrawerTextHoverColor: #e8e8e8;
+$menuDrawerTextHoverColor: #c3cdbb;
 
-$cartDrawerColor: #f8f8f8;
-$cartDrawerTextColor: #333;
-$cartDrawerBorderColor: rgba(51, 51, 51, 0.5);
+$cartDrawerColor: #ffffff;
+$cartDrawerTextColor: #000000;
+$cartDrawerBorderColor: rgba(0, 0, 0, 0.5);
 
 //Placeholder colors
 $iconPlaceholderBg: #696969;
@@ -195,89 +195,89 @@ $item-max-width: 160px;
 
 
 @font-face {
-  font-family: Bitter;
-  font-weight: 700;
+  font-family: Chivo;
+  font-weight: 300;
   font-style: normal;
-  src: url("https://fonts.shopifycdn.com/bitter/bitter_n7.5cd2af561a4e68a216346475ceaf10ca55adb978.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=a2e22f3e700421643a2730ea5a98eb97ba9fb7fab80a5d4d7c6e8718dc6d5992") format("woff2"),
-       url("https://fonts.shopifycdn.com/bitter/bitter_n7.9c5e546089ff22210f854b74f8b408a0245252c1.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=f9b31b3a88c5fd3b68078fd0a4abbd552a874f5ffc9675d2115c807d66a969e4") format("woff");
+  src: url("https://fonts.shopifycdn.com/chivo/chivo_n3.5a4af59837ac5ab11add0e1b1e824ac9635aac4a.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=d30ad238b444fe6e5bba8a0fccdcab08df9463d738b965feeed371436be625fc") format("woff2"),
+       url("https://fonts.shopifycdn.com/chivo/chivo_n3.162c793857fc10d94c8104e19bc6fb3587a027e6.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=acca6aebf97b8b8962c1ab0f9ab81fda506333130b1b4f1e32a2f31a5eeb2b3d") format("woff");
 }
 
 @font-face {
-  font-family: "Neuzeit Office";
-  font-weight: 400;
+  font-family: Chivo;
+  font-weight: 300;
   font-style: normal;
-  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n4.ae7f155182babff68f1ef962040edcc74cbc0239.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=e531f3424be05444da2525055bc232a90daacd37919f09bb05b9c5f25735f02e") format("woff2"),
-       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n4.d928145105c25df05cd26a4f8c81aff1e65bd4fe.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=90e0e6c3a9edf67bd88d849be1ae489109c8dc6755fc59d00df0fb2219b8e184") format("woff");
+  src: url("https://fonts.shopifycdn.com/chivo/chivo_n3.5a4af59837ac5ab11add0e1b1e824ac9635aac4a.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=d30ad238b444fe6e5bba8a0fccdcab08df9463d738b965feeed371436be625fc") format("woff2"),
+       url("https://fonts.shopifycdn.com/chivo/chivo_n3.162c793857fc10d94c8104e19bc6fb3587a027e6.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=acca6aebf97b8b8962c1ab0f9ab81fda506333130b1b4f1e32a2f31a5eeb2b3d") format("woff");
 }
 
 @font-face {
-  font-family: "Neuzeit Office";
-  font-weight: 700;
+  font-family: Chivo;
+  font-weight: 300;
   font-style: normal;
-  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.8e6644a6e9b2b400849c4ec07e56b061ab1e6754.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=a678573ada8fece7d9844eb8d1441fe42cf985a0cc907bc60459807878845364") format("woff2"),
-       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.51d3e10318b790966930940575f96c0d8aeccd8c.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=ca229712c89917996f65e365d01b37f63e08be19ac313893c380d78fe00dd5c0") format("woff");
+  src: url("https://fonts.shopifycdn.com/chivo/chivo_n3.5a4af59837ac5ab11add0e1b1e824ac9635aac4a.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=d30ad238b444fe6e5bba8a0fccdcab08df9463d738b965feeed371436be625fc") format("woff2"),
+       url("https://fonts.shopifycdn.com/chivo/chivo_n3.162c793857fc10d94c8104e19bc6fb3587a027e6.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=acca6aebf97b8b8962c1ab0f9ab81fda506333130b1b4f1e32a2f31a5eeb2b3d") format("woff");
 }
 
 
 
 
   @font-face {
-  font-family: "Neuzeit Office";
-  font-weight: 700;
+  font-family: Chivo;
+  font-weight: 400;
   font-style: normal;
-  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.8e6644a6e9b2b400849c4ec07e56b061ab1e6754.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=a678573ada8fece7d9844eb8d1441fe42cf985a0cc907bc60459807878845364") format("woff2"),
-       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.51d3e10318b790966930940575f96c0d8aeccd8c.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=ca229712c89917996f65e365d01b37f63e08be19ac313893c380d78fe00dd5c0") format("woff");
+  src: url("https://fonts.shopifycdn.com/chivo/chivo_n4.bf4dc1c0e4649d2f5a28281870307415c2a9c652.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=bddabd2226d00a14ff18200b574d2898955b6682d7b61123d8160d1075a6d75a") format("woff2"),
+       url("https://fonts.shopifycdn.com/chivo/chivo_n4.c44f905e08fb3fb913ad750486da37926e77c01e.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=7ea3ce9df834f31dc8eec5a3fe9ad1939299d8f3b2f631e3e6e22433cb7087fd") format("woff");
 }
 
 
 
 
   @font-face {
-  font-family: "Neuzeit Office";
+  font-family: Chivo;
+  font-weight: 300;
+  font-style: italic;
+  src: url("https://fonts.shopifycdn.com/chivo/chivo_i3.dba930c9e3d9b59983a1cd5850fcf675302fc7d3.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=4d747b2d7e2b9a1ed91155cdc03b02bd67718fc99f59d0583b26e23b8d4150a6") format("woff2"),
+       url("https://fonts.shopifycdn.com/chivo/chivo_i3.907260d6205ed48ed74d3711948a51361f42df37.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=8bae5fa32c6a264fbceb0b06caa83450570a78e7eb326abe06a98cdf2dff955b") format("woff");
+}
+
+
+
+
+  @font-face {
+  font-family: Chivo;
   font-weight: 400;
   font-style: italic;
-  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_i4.afb55889f961ad5b9449a167e154918f37e53c3a.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=72f2fa60efda52806af009b1abeb684641772c030e07a93d8d3fde5288d13f06") format("woff2"),
-       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_i4.d9a01c535eecef2c35837ad828a5c19a79f02837.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=479500fd3b91dd9b9d9898a423f4c945eb9a19fb65977e36412f07cba093afe3") format("woff");
+  src: url("https://fonts.shopifycdn.com/chivo/chivo_i4.470484818143ea189f363c3f40b1b964b6f9b99a.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=357cdf6dabd049b7c7038fc694f8a2b191dadcd9717210d831bbb42b3e29ead7") format("woff2"),
+       url("https://fonts.shopifycdn.com/chivo/chivo_i4.200ce5592d4f6e30c5616533857fb75f86392d06.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=c5b01b8eb7236cde1fa47efcbfa28eb1f0aab4aa1b0b4cb6d6e47cb1a2b0a8ea") format("woff");
 }
 
 
 
-
-  @font-face {
-  font-family: "Neuzeit Office";
-  font-weight: 700;
-  font-style: italic;
-  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_i7.41c0879093ceb8f3032810dcea7595289abd832d.woff2?h1=dGhpcnR5eWVhcnMuY29t&hmac=faa4daddb7d8c76b73a6784d2ad4c7c2e14cb9d20431242541ec86313742b0d2") format("woff2"),
-       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_i7.68fd27cc1b60c69509a4c51d88872c23c3dabbbe.woff?h1=dGhpcnR5eWVhcnMuY29t&hmac=6c4e33857ec0638773894f835cfe52ea4fd69fe1c322af6416f7e44df12a1855") format("woff");
-}
-
-
-
-$font-weight-normal: 400;
-$font-weight-bold: 700;
+$font-weight-normal: 300;
+$font-weight-bold: 400;
 $font-weight-header-bold: 700;
 
-$headerFontStack: Bitter, serif;
-$headerFontWeight: 700;
+$headerFontStack: Chivo, sans-serif;
+$headerFontWeight: 300;
 $headerFontStyle: normal;
 
-$bodyFontStack: "Neuzeit Office", sans-serif;
-$bodyFontWeight: 400;
+$bodyFontStack: Chivo, sans-serif;
+$bodyFontWeight: 300;
 $bodyFontStyle: normal;
 
-$navigationFontStack: "Neuzeit Office", sans-serif;
-$navigationFontWeight: 700;
+$navigationFontStack: Chivo, sans-serif;
+$navigationFontWeight: 300;
 $navigationFontStyle: normal;
 
 $baseFontSize: 14px; // Henceforth known as 1em
 
 @font-face {
   font-family: 'icons';
-  src: url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/2/assets/icons.eot?v=1282853167238755370');
-  src: url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/2/assets/icons.eot?v=1282853167238755370#iefix') format("embedded-opentype"),
-       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/2/assets/icons.woff?v=10710159224347271237') format("woff"),
-       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/2/assets/icons.ttf?v=10972512194721268217') format("truetype"),
-       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/2/assets/icons.svg?v=13458459411483348863#timber-icons') format("svg");
+  src: url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.eot?v=1282853167238755370');
+  src: url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.eot?v=1282853167238755370#iefix') format("embedded-opentype"),
+       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.woff?v=10710159224347271237') format("woff"),
+       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.ttf?v=10972512194721268217') format("truetype"),
+       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.svg?v=13458459411483348863#timber-icons') format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -632,7 +632,7 @@ form#contact_form .btn, .btn--secondary,
     font-weight: 400;
     
 	margin-top: ($gutter / 2);
-	text-transform: none;
+	text-transform: uppercase;
 	padding: 10px 20px;
 	font-size: 12px;
 	display: inline-block;
@@ -668,7 +668,7 @@ form#contact_form .btn, .btn--secondary,
 	transition: all 0.15s ease-in-out 0s;
 	display: inline-block;
 	padding: 10px 35px;
-	text-transform: none;
+	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 12px;
   cursor: pointer;
@@ -696,7 +696,7 @@ form#contact_form .btn, .btn--secondary,
   transition: all 0.15s ease-in-out 0s;
   display: inline-block;
   padding: 10px 35px;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 12px;
   width: 100%;
@@ -1562,7 +1562,7 @@ footer {
   position: relative;
   margin-bottom: -30px;
   letter-spacing: 0px;
-  text-transform: normal;
+  text-transform: uppercase;
 }
 
 .image-footer svg{
@@ -1863,7 +1863,7 @@ select {
   }
 
   &::placeholder {
-    color: rgba(51, 51, 51, 0.8);
+    color: rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -2687,7 +2687,7 @@ $class-type: unquote(".");
   text-align: center;
   margin: 0 auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 24px;
 
   a,
   a:hover,
@@ -2697,7 +2697,7 @@ $class-type: unquote(".");
 
   a {
     display: block;
-    font-size: 18px;
+    font-size: 24px;
 
     .grid--center & {
       display:inline-block;
@@ -3391,8 +3391,8 @@ header:not(.overlay-header) .site-header__logo-overlay-link {
 
   ul.site-nav{
   	display: inline-block;
-  	font-size: 12px;
-    line-height: 12px;
+  	font-size: 18px;
+    line-height: 18px;
   }
 
   ul li{
@@ -3631,7 +3631,7 @@ hr {
   position: relative;
   margin-bottom: 15px;
   letter-spacing: 0px;
-  text-transform: normal;
+  text-transform: uppercase;
 }
 
 /*============================================================================
@@ -8049,7 +8049,7 @@ body.js-drawer-open {
 
   .newsletter_title h3 {
     text-align:center;
-    text-transform: normal;
+    text-transform: uppercase;
     margin-bottom: 0;
   }
 
@@ -8582,7 +8582,7 @@ body.js-drawer-open {
 // When color scheme is white
 @media screen and (min-width: 769px) {
   .homepage-sections-wrapper--white .text-advert-section .grid__item {
-    border-left: 1px solid rgba(51, 51, 51, 0.6);
+    border-left: 1px solid rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -9612,11 +9612,11 @@ body.js-drawer-open {
   }
 
   input[type='checkbox']:hover {
-    background-color: rgba(51, 51, 51, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   input[type='checkbox']:checked {
-    background-color: rgba(51, 51, 51, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -9648,11 +9648,11 @@ body.js-drawer-open {
   }
 
   input[type='radio']:hover {
-    background-color: rgba(51, 51, 51, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   input[type='radio']:checked {
-    background-color: rgba(51, 51, 51, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -10643,4 +10643,223 @@ body.js-drawer-open {
 
 .shopify-challenge__container .g-recaptcha iframe {
   max-height: 78px;
+}
+
+
+.gallery {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left:10%;
+  padding-right:10%;
+}
+
+.centered-container {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.gallery-grid-container {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 40px;
+  -ms-grid-row-align: center;
+  align-self: center;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-areas: ".";
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: 0fr 2fr 1fr 1fr;
+  -ms-grid-rows: auto 20px auto;
+  grid-template-rows: auto auto;
+}
+
+.gallery-lightbox {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-thumbnail {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 50%;
+  object-position: 50% 50%;
+}
+
+.paragraph {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.image {
+  margin: 40px auto;
+}
+
+.heading {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .gallery-grid-container {
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
+    align-self: stretch;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .gallery {
+    padding: 40px 20px;
+  }
+  .gallery-grid-container {
+    max-width: none;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .centered-container {
+    text-align: left;
+  }
+  .gallery-grid-container {
+    margin-right: 0px;
+    margin-left: 0px;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+  }
+  .image {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  .heading {
+    text-align: center;
+  }
+  
+  .loaded{
+   background-size: 100% 500px !important;; 
+  }
+  
+}
+
+#w-node-009adc82c9db-0b7eb483 {
+  -ms-grid-column: span 2;
+  grid-column-start: span 2;
+  -ms-grid-column-span: 2;
+  grid-column-end: span 2;
+  -ms-grid-row: span 2;
+  grid-row-start: span 2;
+  -ms-grid-row-span: 2;
+  grid-row-end: span 2;
+}
+
+#w-node-009adc82c9dd-0b7eb483 {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+}
+
+#w-node-b1988250cd3c-0b7eb483 {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+}
+
+#w-node-d424b9ebaaee-0b7eb483 {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+}
+
+#w-node-8aa89e584ee7-0b7eb483 {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+}
+
+.about-image{
+ width:200px;
+  height: auto;
+}
+
+.swatch label:hover{
+  background-color:black;
+  color:white;
+}
+
+.swatch label{
+ transition: all 0.6s cubic-bezier(0.61, 1, 0.88, 1);
+}
+
+.about-block{
+ display:block; 
+}
+
+.about-flex{
+ display:flex; 
+  justify-content:center;
+  align-items:center;
+}
+
+.about-column{
+ flex:50%; 
+  padding:20px;
+}
+
+@media only screen and (max-width:479px){
+ .about-column{
+  flex:100%; 
+ }
+  .about-flex{
+   display:block; 
+  }
+  
+  .about-image{
+   width: 100%; 
+  }
+}
+
+.size-guidelink:hover{
+ text-decoration:underline; 
+}
+.page--title{
+ display:none !important; 
+}
+
+@media only screen and (max-width: 768px){
+.grid__item {
+  margin-top:0px !important;
+}
 }

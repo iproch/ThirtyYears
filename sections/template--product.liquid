@@ -109,12 +109,18 @@
                 </div>
 
                 <h1 itemprop="name" class="product-details-product-title">{{ product.title }}</h1>
+                
+                <a class="size-guidelink" href="/pages/size-guide"><h5>Click here for full size guide</h5></a>
 
                 {% if section.settings.description_position == 'inline_top' %}
                   <div class="product-description product-details--form-wrapper---below rte{% if section.settings.enable_readmore %} readmore closed{% endif %}" itemprop="description">
                     {{ product.description }}
                   </div>
                 {% endif %}
+                
+                {% if settings.show_reviews %}
+                <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+				{% endif %}
 
                 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-details--form-wrapper{% if product.available %} product-details--form-wrapper---in-stock{% else %} product-details--form-wrapper---out-of-stock{% endif %}">
                   <meta itemprop="priceCurrency" content="{{ shop.currency }}">

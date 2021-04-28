@@ -25,6 +25,10 @@
                             <div class="swiper-container product-recommendations__slideshow">
                                 <div class="swiper-wrapper">
                                     {%- for product in recommendations.products -%}
+                                  {% comment %}Excludes the Route Package Protection{% endcomment %}
+                                  {% unless product.id == 6552810324140 %}
+
+
                                         {% comment %}
                                             Check if the product is on sale and set a variable to be used below.
                                         {% endcomment %}
@@ -46,6 +50,7 @@
                                               {% render 'grid-view-item', product: product, collection: null, hover_effect: false, quick_shop: section.settings.quick_shop_enable, show_vendor: false, show_reviews: settings.show_reviews %}
                                             </div>
                                         </div>
+                                  {% endunless %}
                                     {%- endfor -%}
                                 </div>
                             </div>

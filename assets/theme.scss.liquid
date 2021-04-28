@@ -10677,3 +10677,222 @@ body.js-drawer-open {
 .shopify-challenge__container .g-recaptcha iframe {
   max-height: 78px;
 }
+
+
+.gallery {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left:10%;
+  padding-right:10%;
+}
+
+.centered-container {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.gallery-grid-container {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 40px;
+  -ms-grid-row-align: center;
+  align-self: center;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-areas: ".";
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: 0fr 2fr 1fr 1fr;
+  -ms-grid-rows: auto 20px auto;
+  grid-template-rows: auto auto;
+}
+
+.gallery-lightbox {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-thumbnail {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 50%;
+  object-position: 50% 50%;
+}
+
+.paragraph {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.image {
+  margin: 40px auto;
+}
+
+.heading {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .gallery-grid-container {
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
+    align-self: stretch;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .gallery {
+    padding: 40px 20px;
+  }
+  .gallery-grid-container {
+    max-width: none;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .centered-container {
+    text-align: left;
+  }
+  .gallery-grid-container {
+    margin-right: 0px;
+    margin-left: 0px;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+  }
+  .image {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  .heading {
+    text-align: center;
+  }
+  
+  .loaded{
+   background-size: 100% 500px !important;; 
+  }
+  
+}
+
+#w-node-009adc82c9db-0b7eb483 {
+  -ms-grid-column: span 2;
+  grid-column-start: span 2;
+  -ms-grid-column-span: 2;
+  grid-column-end: span 2;
+  -ms-grid-row: span 2;
+  grid-row-start: span 2;
+  -ms-grid-row-span: 2;
+  grid-row-end: span 2;
+}
+
+#w-node-009adc82c9dd-0b7eb483 {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+}
+
+#w-node-b1988250cd3c-0b7eb483 {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+}
+
+#w-node-d424b9ebaaee-0b7eb483 {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+}
+
+#w-node-8aa89e584ee7-0b7eb483 {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+}
+
+.about-image{
+ width:200px;
+  height: auto;
+}
+
+.swatch label:hover{
+  background-color:black;
+  color:white;
+}
+
+.swatch label{
+ transition: all 0.6s cubic-bezier(0.61, 1, 0.88, 1);
+}
+
+.about-block{
+ display:block; 
+}
+
+.about-flex{
+ display:flex; 
+  justify-content:center;
+  align-items:center;
+}
+
+.about-column{
+ flex:50%; 
+  padding:20px;
+}
+
+@media only screen and (max-width:479px){
+ .about-column{
+  flex:100%; 
+ }
+  .about-flex{
+   display:block; 
+  }
+  
+  .about-image{
+   width: 100%; 
+  }
+}
+
+.size-guidelink:hover{
+ text-decoration:underline; 
+}
+.page--title{
+ display:none !important; 
+}
+
+@media only screen and (max-width: 768px){
+.grid__item {
+  margin-top:0px !important;
+}
+}

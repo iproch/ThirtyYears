@@ -1,0 +1,952 @@
+<!-- /sections/page-template.liquid -->
+{% case section.settings.page_width %}
+{% when 'full-width' %}
+{%- assign page_width = 'large--one whole' -%}
+{% when 'narrow' %}
+{%- assign page_width = 'large--two-thirds push--large--one-sixth' -%}
+{% endcase %}
+
+<div class="grid clearfix">
+  <div class="grid__item {{ page_width }}">
+
+    <div class="sitewide--title-wrapper">
+
+      <h1 class="page--title">{{ page.title }}</h1>
+
+      <center>{{ section.settings.rich-text }}</center>
+
+      <div class="flex-control">
+        <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-1 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-1 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-1 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-1 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-1 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-1 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-1 }}</p>
+        </div>
+        <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-2 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-2 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-2 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-2 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-2 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-2 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-2 }}</p>
+        </div>
+        <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-3 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-3 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-3 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-3 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-3 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-3 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-3 }}</p>
+        </div>
+        <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-4 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-4 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-4 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-4 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-4 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-4 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-4 }}</p>
+        </div>
+       
+        
+      </div>
+      <div class="flex-control">
+         <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-5 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-5 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-5 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-5 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-5 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-5 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-5 }}</p>
+        </div>
+      <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-6 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-6 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-6 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-6 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-6 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-6 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-6 }}</p>
+        </div>
+        <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-7 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-7 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-7 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-7 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-7 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-7 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-7 }}</p>
+        </div>
+      </div>
+
+      <center>{{ section.settings.rich-text-chart }}</center>
+
+      <table>
+        <tr>
+          <th>Size</th>
+          <th>US</th>
+          <th>Chest</th>
+          <th>Waist</th>
+          <th>Hips</th>
+        </tr>
+        <tr>
+          <td>{{ section.settings.row1col1 }}</td>
+          <td>{{ section.settings.row1col2 }}</td>
+          <td>{{ section.settings.row1col3 }}</td>
+          <td>{{ section.settings.row1col4 }}</td>
+          <td>{{ section.settings.row1col5 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.row2col1 }}</td>
+          <td>{{ section.settings.row2col2 }}</td>
+          <td>{{ section.settings.row2col3 }}</td>
+          <td>{{ section.settings.row2col4 }}</td>
+          <td>{{ section.settings.row2col5 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.row3col1 }}</td>
+          <td>{{ section.settings.row3col2 }}</td>
+          <td>{{ section.settings.row3col3 }}</td>
+          <td>{{ section.settings.row3col4 }}</td>
+          <td>{{ section.settings.row3col5 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.row4col1 }}</td>
+          <td>{{ section.settings.row4col2 }}</td>
+          <td>{{ section.settings.row4col3 }}</td>
+          <td>{{ section.settings.row4col4 }}</td>
+          <td>{{ section.settings.row4col5 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.row5col1 }}</td>
+          <td>{{ section.settings.row5col2 }}</td>
+          <td>{{ section.settings.row5col3 }}</td>
+          <td>{{ section.settings.row5col4 }}</td>
+          <td>{{ section.settings.row5col5 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.row6col1 }}</td>
+          <td>{{ section.settings.row6col2 }}</td>
+          <td>{{ section.settings.row6col3 }}</td>
+          <td>{{ section.settings.row6col4 }}</td>
+          <td>{{ section.settings.row6col5 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.row7col1 }}</td>
+          <td>{{ section.settings.row7col2 }}</td>
+          <td>{{ section.settings.row7col3 }}</td>
+          <td>{{ section.settings.row7col4 }}</td>
+          <td>{{ section.settings.row7col5 }}</td>
+        </tr>
+      </table>
+
+
+    </div>
+
+    <div class="grid">
+      <div class="rte grid__item{% if section.settings.show_sidebar %} large--two-thirds{% endif %}">
+        {{ page.content }}
+      </div>
+
+      {% if section.settings.show_sidebar %}
+
+      <div class="page-sidebar grid__item large--one-third">
+        {% if section.blocks.size == 0 %}
+
+        <div class="placeholder-noblocks">
+          {{ 'general.onboarding.no_content' | t }}
+        </div>
+
+        {% else %}
+
+        {% for block in section.blocks %}
+        {% case block.type %}
+
+        {% when 'text' %}
+        <div class="sidebar-section">
+          <h4>{{ block.settings.title }}</h4>
+        </div>
+
+        {% when 'richtext' %}
+        <div class="sidebar-section sidebar-text">
+          {{ block.settings.text }}
+        </div>
+
+        {% when 'menu' %}
+        {% assign menu = linklists[block.settings.menu] %}
+        <div class="sidebar-section">
+          {% for link in menu.links %}
+          {% if link.links != blank %}
+          <li>
+            <a href="{{ link.url }}" class="sidebar-menu--has-dropdown-title">{{ link.title }}</a>
+            <ul class="sidebar-menu--level-2">
+              {% for sub_link in link.links %}
+              <li>- <a href="{{ sub_link.url }}">{{ sub_link.title | escape }}</a></li>
+              <ul class="sidebar-menu--level-3">
+                {% for sub_sub_link in sub_link.links %}
+                <li>- <a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title | escape }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endfor %}
+            </ul>
+          </li>
+          {% else %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+
+        </div>
+
+        {% when 'image_picker' %}
+        <div class="sidebar-section sidebar-image">
+          {% if block.settings.image_link != blank %}
+          <a href="{{ block.settings.image_link }}">
+            {% endif %}
+
+            {% if block.settings.sidebar_image == blank %}
+            {{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}
+            {% else %}
+            {% render 'responsive-image' with block.settings.sidebar_image %}
+            {% endif %}
+
+            {% if block.settings.image_title != blank %}
+            <h4>{{ block.settings.image_title }}</h4>
+            {% endif %}
+
+            {% if block.settings.image_link != blank %}
+          </a>
+          {% endif %}
+        </div>
+
+        {% endcase %}
+        {% endfor %}
+        {% endif %}
+
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+"name": {
+"en": "Size Guide",
+"de": "Seite",
+"es": "Página",
+"fr": "Page",
+"pt-PT": "Página"
+},
+"settings": [
+{
+"type": "select",
+"id": "page_width",
+"label": {
+"en": "Width",
+"de": "Breite",
+"es": "Ancho",
+"fr": "Largeur",
+"pt-PT": "Largura"
+},
+"options": [
+{
+"value": "full-width",
+"label": {
+"en": "Full width",
+"de": "Volle Breite",
+"es": "Ancho completo",
+"fr": "Pleine largeur",
+"pt-PT": "Largura total"
+}
+},
+{
+"value": "narrow",
+"label": {
+"en": "Narrow",
+"de": "Eng",
+"es": "Estrecho",
+"fr": "Restreindre",
+"pt-PT": "Reduzido"
+}
+}
+],
+"default": "full-width"
+},
+{
+"type": "header",
+"content": {
+"en": "Sidebar",
+"de": "Seitenleiste",
+"es": "Barra lateral",
+"fr": "Barre latérale",
+"pt-PT": "Barra lateral"
+}
+},
+{
+"type": "checkbox",
+"id": "show_sidebar",
+"label": {
+"en": "Enable",
+"de": "Aktivieren",
+"es": "Habilitar",
+"fr": "Activer",
+"pt-PT": "Ativar efeito de paralaxe"
+},
+"default": false
+},
+{
+"id": "rich-text",
+"type": "richtext",
+"label": "Primary Text",
+"default": "<p>Add your text here</p>"
+},
+{
+"type": "image_picker",
+"id": "model-img-1",
+"label": "Model image"
+},
+{
+"id": "model-name-1",
+"type": "text",
+"label": "Model Name"
+},
+{
+"id": "model-height-1",
+"type": "text",
+"label":"Model Height" 
+},
+{
+"id": "model-chest-1",
+"type": "text",
+"label":"Chest" 
+},
+{
+"id": "model-waist-1",
+"type": "text",
+"label":"Waist" 
+},
+{
+"id": "model-hips-1",
+"type": "text",
+"label":"Hips" 
+},
+{
+"id": "model-wears-1",
+"type": "text",
+"label": "Model Size"
+},
+{
+"type": "image_picker",
+"id": "model-img-2",
+"label": "Model image"
+},
+{
+"id": "model-name-2",
+"type": "text",
+"label": "Model Name"
+},
+{
+"id": "model-height-2",
+"type": "text",
+"label": "Model Height"
+},
+{
+"id": "model-chest-2",
+"type": "text",
+"label":"Chest" 
+},
+{
+"id": "model-waist-2",
+"type": "text",
+"label":"Waist" 
+},
+{
+"id": "model-hips-2",
+"type": "text",
+"label":"Hips" 
+},
+{
+"id": "model-wears-2",
+"type": "text",
+"label": "Model Size"
+},
+{
+"type": "image_picker",
+"id": "model-img-3",
+"label": "Model image"
+},
+{
+"id": "model-name-3",
+"type": "text",
+"label": "Model Name"
+},
+{
+"id": "model-height-3",
+"type": "text",
+"label": "Model Height"
+},
+{
+"id": "model-chest-3",
+"type": "text",
+"label":"Chest" 
+},
+{
+"id": "model-waist-3",
+"type": "text",
+"label":"Waist" 
+},
+{
+"id": "model-hips-3",
+"type": "text",
+"label":"Hips" 
+},
+{
+"id": "model-wears-3",
+"type": "text",
+"label": "Model Size"
+},
+{
+"type": "image_picker",
+"id": "model-img-4",
+"label": "Model image"
+},
+{
+"id": "model-name-4",
+"type": "text",
+"label": "Model Name"
+},
+{
+"id": "model-height-4",
+"type": "text",
+"label": "Model Height"
+},
+{
+"id": "model-chest-4",
+"type": "text",
+"label":"Chest" 
+},
+{
+"id": "model-waist-4",
+"type": "text",
+"label":"Waist" 
+},
+{
+"id": "model-hips-4",
+"type": "text",
+"label":"Hips" 
+},
+{
+"id": "model-wears-4",
+"type": "text",
+"label": "Model Size"
+},
+{
+"type": "image_picker",
+"id": "model-img-5",
+"label": "Model image"
+},
+{
+"id": "model-name-5",
+"type": "text",
+"label": "Model Name"
+},
+{
+"id": "model-height-5",
+"type": "text",
+"label": "Model Height"
+},
+{
+"id": "model-chest-5",
+"type": "text",
+"label":"Chest" 
+},
+{
+"id": "model-waist-5",
+"type": "text",
+"label":"Waist" 
+},
+{
+"id": "model-hips-5",
+"type": "text",
+"label":"Hips" 
+},
+{
+"id": "model-wears-5",
+"type": "text",
+"label": "Model Size"
+},
+{
+"type": "image_picker",
+"id": "model-img-6",
+"label": "Model image"
+},
+{
+"id": "model-name-6",
+"type": "text",
+"label": "Model Name"
+},
+{
+"id": "model-height-6",
+"type": "text",
+"label": "Model Height"
+},
+{
+"id": "model-chest-6",
+"type": "text",
+"label":"Chest" 
+},
+{
+"id": "model-waist-6",
+"type": "text",
+"label":"Waist" 
+},
+{
+"id": "model-hips-6",
+"type": "text",
+"label":"Hips" 
+},
+{
+"id": "model-wears-6",
+"type": "text",
+"label": "Model Size"
+},
+{
+"type": "image_picker",
+"id": "model-img-7",
+"label": "Model image"
+},
+{
+"id": "model-name-7",
+"type": "text",
+"label": "Model Name"
+},
+{
+"id": "model-height-7",
+"type": "text",
+"label": "Model Height"
+},
+{
+"id": "model-chest-7",
+"type": "text",
+"label":"Chest" 
+},
+{
+"id": "model-waist-7",
+"type": "text",
+"label":"Waist" 
+},
+{
+"id": "model-hips-7",
+"type": "text",
+"label":"Hips" 
+},
+{
+"id": "model-wears-7",
+"type": "text",
+"label": "Model Size"
+},
+{
+"id": "rich-text-chart",
+"type": "richtext",
+"label": "Primary Text",
+"default": "<p>Add your text here</p>"
+},
+{
+"id": "row1col1",
+"type": "text",
+"label": "Row1-Col1"
+},
+{
+"id": "row1col2",
+"type": "text",
+"label": "Row1-Col2"
+},
+{
+"id": "row1col3",
+"type": "text",
+"label": "Row1-Col3"
+},
+{
+"id": "row1col4",
+"type": "text",
+"label": "Row1-Col4"
+},
+{
+"id": "row1col5",
+"type": "text",
+"label": "Row1-Col5"
+},
+{
+"id": "row2col1",
+"type": "text",
+"label": "Row2-Col1"
+},
+{
+"id": "row2col2",
+"type": "text",
+"label": "Row2-Col2"
+},
+{
+"id": "row2col3",
+"type": "text",
+"label": "Row2-Col3"
+},
+{
+"id": "row2col4",
+"type": "text",
+"label": "Row2-Col4"
+},
+{
+"id": "row2col5",
+"type": "text",
+"label": "Row2-Col5"
+},
+{
+"id": "row3col1",
+"type": "text",
+"label": "Row3-Col1"
+},
+{
+"id": "row3col2",
+"type": "text",
+"label": "Row3-Col2"
+},
+{
+"id": "row3col3",
+"type": "text",
+"label": "Row3-Col3"
+},
+{
+"id": "row3col4",
+"type": "text",
+"label": "Row3-Col4"
+},
+{
+"id": "row3col5",
+"type": "text",
+"label": "Row3-Col5"
+},
+{
+"id": "row4col1",
+"type": "text",
+"label": "Row4-Col1"
+},
+{
+"id": "row4col2",
+"type": "text",
+"label": "Row4-Col2"
+},
+{
+"id": "row4col3",
+"type": "text",
+"label": "Row4-Col3"
+},
+{
+"id": "row4col4",
+"type": "text",
+"label": "Row4-Col4"
+},
+{
+"id": "row4col5",
+"type": "text",
+"label": "Row4-Col5"
+},
+{
+"id": "row5col1",
+"type": "text",
+"label": "Row5-Col1"
+},
+{
+"id": "row5col2",
+"type": "text",
+"label": "Row5-Col2"
+},
+{
+"id": "row5col3",
+"type": "text",
+"label": "Row5-Col3"
+},
+{
+"id": "row5col4",
+"type": "text",
+"label": "Row5-Col4"
+},
+{
+"id": "row5col5",
+"type": "text",
+"label": "Row5-Col5"
+},
+{
+"id": "row6col1",
+"type": "text",
+"label": "Row6-Col1"
+},
+{
+"id": "row6col2",
+"type": "text",
+"label": "Row6-Col2"
+},
+{
+"id": "row6col3",
+"type": "text",
+"label": "Row6-Col3"
+},
+{
+"id": "row6col4",
+"type": "text",
+"label": "Row6-Col4"
+},
+{
+"id": "row6col5",
+"type": "text",
+"label": "Row6-Col5"
+},
+{
+"id": "row7col1",
+"type": "text",
+"label": "Row7-Col1"
+},
+{
+"id": "row7col2",
+"type": "text",
+"label": "Row7-Col2"
+},
+{
+"id": "row7col3",
+"type": "text",
+"label": "Row7-Col3"
+},
+{
+"id": "row7col4",
+"type": "text",
+"label": "Row7-Col4"
+},
+{
+"id": "row7col5",
+"type": "text",
+"label": "Row7-Col5"
+}
+],
+"blocks": [
+{
+"type": "text",
+"name": {
+"en": "Title",
+"de": "Titel",
+"es": "Título",
+"fr": "Titre",
+"pt-PT": "Título"
+},
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Title",
+"de": "Titel",
+"es": "Título",
+"fr": "Titre",
+"pt-PT": "Título"
+},
+"default": {
+"en": "Title",
+"de": "Titel",
+"es": "Título",
+"fr": "Titre",
+"pt-PT": "Título"
+}
+}
+]
+},
+{
+"type": "richtext",
+"name": {
+"en": "Text",
+"de": "Text",
+"es": "Texto",
+"fr": "Texte",
+"pt-PT": "Texto"
+},
+"settings": [
+{
+"type": "richtext",
+"id": "text",
+"label": {
+"en": "Text",
+"de": "Text",
+"es": "Texto",
+"fr": "Texte",
+"pt-PT": "Texto"
+},
+"default": {
+"en": "<p>Add any additional content you want across your stores content pages</p>",
+"de": "<p>Fügen Sie alle zusätzlichen Inhalte hinzu, die Sie auf den Inhaltsseiten Ihrer Shops haben möchten</p>",
+"es": "<p>Añada cualquier contenido adicional que desee en todas las páginas de su tienda</p>",
+"fr": "<p>Ajouter tout contenu supplémentaire que vous désirez dans toutes les pages de contenu de vos magasins</p>",
+"pt-PT": "<p>Adicione os conteúdos adicionais que quiser nas páginas de conteúdo das suas lojas</p>"
+}
+}
+]
+},
+{
+"type": "menu",
+"name": {
+"en": "Menu",
+"de": "Menü",
+"es": "Menú",
+"fr": "Menu",
+"pt-PT": "Menu"
+},
+"settings": [
+{
+"type": "link_list",
+"id": "menu",
+"label": {
+"en": "Menu",
+"de": "Menü",
+"es": "Menú",
+"fr": "Menu",
+"pt-PT": "Menu"
+}
+}
+]
+},
+{
+"type": "image_picker",
+"name": {
+"en": "Image",
+"de": "Bild",
+"es": "Imagen",
+"fr": "Image",
+"pt-PT": "Imagem"
+},
+"settings": [
+{
+"type": "image_picker",
+"id": "sidebar_image",
+"label": {
+"en": "Image",
+"de": "Bild",
+"es": "Imagen",
+"fr": "Image",
+"pt-PT": "Imagem"
+}
+},
+{
+"type": "text",
+"id": "image_title",
+"label": {
+"en": "Image title",
+"de": "Bildtitel",
+"es": "Título de la imagen",
+"fr": "Titre de l'image",
+"pt-PT": "Título da imagem"
+},
+"placeholder": {
+"en": "Title",
+"de": "Titel",
+"es": "Título",
+"fr": "Titre",
+"pt-PT": "Título"
+}
+},
+{
+"type": "url",
+"id": "image_link",
+"label": {
+"en": "Image link",
+"de": "Bildlink",
+"es": "Enlace de la imagen",
+"fr": "Lien vers l'image",
+"pt-PT": "Link da imagem"
+}
+}
+]
+}
+]
+}
+
+
+{% endschema %}
+
+
+<style>
+
+  .size-modeldiv {
+    width: auto;
+    text-align: center;
+    padding: 15px;
+    display: inline-block;
+  }
+
+  .inlineTitle {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .inlineBlock {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 12px;
+  }
+
+  /*Desktop styling*/
+  @media only screen and (min-width: 479px){
+    .flex-control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .size-modeldiv{
+      width:18%; 
+    }
+
+  }
+
+</style>
