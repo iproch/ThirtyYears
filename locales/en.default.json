@@ -13,7 +13,7 @@
       "home_link_title": "Back to the frontpage"
     },
     "newsletter_form": {
-      "newsletter_email": "email@example.com",
+      "newsletter_email": "ENTER EMAIL",
       "submit": "Subscribe",
       "confirmation": "Thanks for subscribing"
     },
@@ -341,8 +341,8 @@
       "category": "Category",
       "type": "Type",
       "include_taxes": "Tax included.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
-      "out_of_stock_html": "Click <a href=\"#\"><strong>here</strong></a> to be notified by email when {{ product }} becomes available.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "out_of_stock_html": "Click <a href=\"#\"><strong>here<\/strong><\/a> to be notified by email when {{ product }} becomes available.",
       "wrong_email": "Please provide a valid email address.",
       "out_of_stock_success": "Thanks! We will notify you when this product becomes available!",
       "read_more_html": "Read more",

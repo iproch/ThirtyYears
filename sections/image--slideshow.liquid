@@ -104,9 +104,13 @@
 											{% endif %}
 
 												{% if block.settings.mobile_image %}
-													{% render 'responsive-image' with block.settings.mobile_image, wrapper_class: ' slideshow-mobile-image', blur: false %}
+                                                <div class="desktop-slide">
 													{% render 'responsive-image' with block.settings.image, wrapper_class: ' slideshow-desktop-image', allow_stretch: true, blur: false %}
-												{% else %}
+                                                    </div>
+                                                    <div class="mobile-slide">
+                                                    {% render 'responsive-image' with block.settings.mobile_image, wrapper_class: ' slideshow-mobile-image', blur: false %}
+                                                    </div>
+                                                {% else %}
 													{% render 'responsive-image' with block.settings.image, wrapper_class: ' slideshow-desktop-as-mobile-image', allow_stretch: true, blur: false %}
 												{% endif %}
 
