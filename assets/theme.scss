@@ -76,7 +76,7 @@ $borderColor: rgba(0, 0, 0, 0.5);
 // Header
 $headerColor: #ffffff;
 $headerBorderColor: rgba(0,0,0,0);
-$overlayHeaderTextColor: #f8f8f8;
+$overlayHeaderTextColor: #000000;
 $navTextColor: #000000;
 $navTextHover: #c3cdbb;
 
@@ -97,9 +97,9 @@ $overlayColor: #000; // overlays on images and when you open the drawer
 $filterBgColor: rgba(0, 0, 0, 0.1);
 
 // Site footer
-$colorFooterBg: #c7c7c7;
-$colorFooterText: #ffffff;
-$colorFooterBorder: rgba(255, 255, 255, 0.1);
+$colorFooterBg: #ffffff;
+$colorFooterText: #000000;
+$colorFooterBorder: rgba(0, 0, 0, 0.1);
 
 // Helper colors
 $disabledGrey: #f6f6f6;
@@ -110,8 +110,8 @@ $successColor: #56ad6a;
 $successBgColor: #ecfef0;
 
 // Popup
-$popupTextColor: #ffffff;
-$popupBgColor: #000000;
+$popupTextColor: #323232;
+$popupBgColor: #fafafa;
 
 // Drawers
 $menuDrawerColor: #000000;
@@ -120,8 +120,8 @@ $menuDrawerBorderColor: rgba(248, 248, 248, 0.1);
 $menuDrawerTextHoverColor: #c3cdbb;
 
 $cartDrawerColor: #ffffff;
-$cartDrawerTextColor: #000000;
-$cartDrawerBorderColor: rgba(0, 0, 0, 0.5);
+$cartDrawerTextColor: #323232;
+$cartDrawerBorderColor: rgba(50, 50, 50, 0.5);
 
 //Placeholder colors
 $iconPlaceholderBg: #696969;
@@ -273,11 +273,11 @@ $baseFontSize: 14px; // Henceforth known as 1em
 
 @font-face {
   font-family: 'icons';
-  src: url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.eot?v=1282853167238755370');
-  src: url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.eot?v=1282853167238755370#iefix') format("embedded-opentype"),
-       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.woff?v=10710159224347271237') format("woff"),
-       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.ttf?v=10972512194721268217') format("truetype"),
-       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/4/assets/icons.svg?v=13458459411483348863#timber-icons') format("svg");
+  src: url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/10/assets/icons.eot?v=1282853167238755370');
+  src: url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/10/assets/icons.eot?v=1282853167238755370#iefix') format("embedded-opentype"),
+       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/10/assets/icons.woff?v=10710159224347271237') format("woff"),
+       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/10/assets/icons.ttf?v=10972512194721268217') format("truetype"),
+       url('//cdn.shopify.com/s/files/1/0438/0167/3883/t/10/assets/icons.svg?v=13458459411483348863#timber-icons') format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1179,6 +1179,7 @@ table.full {
 
 th {
   font-weight: bold;
+  
 }
 
 th, td {
@@ -5217,6 +5218,20 @@ body.js-drawer-open {
 }
 
 
+  #slide-up {
+    background-image: url('//cdn.shopify.com/s/files/1/0438/0167/3883/files/Untitled-3_800x.jpg?v=1621967415');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50%;
+  }
+
+  @media screen and (max-width: 768px) {
+    #slide-up .popup_image {
+      display: none;
+    }
+  }
+
 
 .popup {
   background: $popupBgColor;
@@ -5383,7 +5398,7 @@ body.js-drawer-open {
 // bottom right settings =====================================================*/
 
 #slide-up {
-  background: $popupBgColor;
+  //background: $popupBgColor;
   color: $popupTextColor;
   bottom: 20px;
   right: 20px;
@@ -5421,10 +5436,10 @@ body.js-drawer-open {
 
   .popup--close-btn {
     cursor: pointer;
-    float: right;
+    float: left;
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
   }
 
   .popup--body {
@@ -7956,7 +7971,7 @@ body.js-drawer-open {
 
   img {
     display: block;
-    height: 100%;
+    height: 100VH;
     width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
@@ -10848,6 +10863,10 @@ body.js-drawer-open {
   
   .about-image{
    width: 100%; 
+  }
+  
+  .desktop-slide{
+  display:none;
   }
 }
 

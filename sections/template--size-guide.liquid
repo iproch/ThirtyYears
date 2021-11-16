@@ -14,7 +14,7 @@
       <h1 class="page--title">{{ page.title }}</h1>
 
       <center>{{ section.settings.rich-text }}</center>
-
+{% comment %}
       <div class="flex-control">
         <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-1 | img_url: 'master' }}" />
           <h3 class="inlineTitle">Model:</h3>
@@ -119,9 +119,76 @@
           <p class="inlineBlock">{{ section.settings.model-wears-7 }}</p>
         </div>
       </div>
+      
+      <!-- Testing new size guide-->
+      <div class="flex-control">
+        <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-1 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-1 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-1 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-1 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-1 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-1 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-1 }}</p>
+        </div>
+        <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-2 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-2 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-2 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-2 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-2 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-2 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-2 }}</p>
+        </div>
+        <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-3 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-3 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-3 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-3 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-3 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-3 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-3 }}</p>
+        </div>
+        <div class="size-modeldiv"><img class="modeldiv-img" src="{{ section.settings.model-img-4 | img_url: 'master' }}" />
+          <h3 class="inlineTitle">Model:</h3>
+          <p class="inlineBlock">{{ section.settings.model-name-4 }}</p><br>
+          <h3 class="inlineTitle">Height:</h3>
+          <p class="inlineBlock">{{ section.settings.model-height-4 }}</p><br>
+          <h3 class="inlineTitle">Chest:</h3>
+          <p class="inlineBlock">{{ section.settings.model-chest-4 }}</p><br>
+          <h3 class="inlineTitle">Waist:</h3>
+          <p class="inlineBlock">{{ section.settings.model-waist-4 }}</p><br>
+          <h3 class="inlineTitle">Hips:</h3>
+          <p class="inlineBlock">{{ section.settings.model-hips-4 }}</p><br>
+          <h3 class="inlineTitle">Wears:</h3>
+          <p class="inlineBlock">{{ section.settings.model-wears-4 }}</p>
+        </div>
+       
+        
+      </div>
+      
+      
+      <!-- end testing -->
+      
+      {% endcomment %}
 
       <center>{{ section.settings.rich-text-chart }}</center>
-
+<div class="primary-size-div">
       <table>
         <tr>
           <th>Size</th>
@@ -180,6 +247,96 @@
           <td>{{ section.settings.row7col5 }}</td>
         </tr>
       </table>
+      </div>
+     
+      
+      <!-- Begin the Crew Neck Section -->
+      <div class="biker-size-div">
+      <h2 style="text-align:center;">{{ section.settings.crew-title}}</h2>
+      
+      <table>
+        <tr>
+          <th>Size</th>
+          <th>Chest</th>
+          <th>Waist</th>
+        </tr>
+        <tr>
+          <td>{{ section.settings.crew-row1col1 }}</td>
+          <td>{{ section.settings.crew-row1col2 }}</td>
+          <td>{{ section.settings.crew-row1col3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.crew-row2col1 }}</td>
+          <td>{{ section.settings.crew-row2col2 }}</td>
+          <td>{{ section.settings.crew-row2col3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.crew-row3col1 }}</td>
+          <td>{{ section.settings.crew-row3col2 }}</td>
+          <td>{{ section.settings.crew-row3col3 }}</td>
+        </tr>
+        
+      </table>
+    
+        <center><p style="margin-top:15px;">{{ section.settings.crew-subtext }}</p></center>
+
+      <!-- End the Crew Neck Section -->
+        
+        
+         <!-- Testing new layout -->
+      <div class="biker-size-div">
+      <h2 style="text-align:center;">Biker Shorts</h2>
+      
+      <table>
+        <tr>
+          <th>Size</th>
+          <th>Waist</th>
+          <th>Hips</th>
+        </tr>
+        <tr>
+          <td>{{ section.settings.biker-row1col1 }}</td>
+          <td>{{ section.settings.biker-row1col2 }}</td>
+          <td>{{ section.settings.biker-row1col3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.biker-row2col1 }}</td>
+          <td>{{ section.settings.biker-row2col2 }}</td>
+          <td>{{ section.settings.biker-row2col3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.biker-row3col1 }}</td>
+          <td>{{ section.settings.biker-row3col2 }}</td>
+          <td>{{ section.settings.biker-row3col3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.biker-row4col1 }}</td>
+          <td>{{ section.settings.biker-row4col2 }}</td>
+          <td>{{ section.settings.biker-row4col3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.biker-row5col1 }}</td>
+          <td>{{ section.settings.biker-row5col2 }}</td>
+          <td>{{ section.settings.biker-row5col3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.biker-row6col1 }}</td>
+          <td>{{ section.settings.biker-row6col2 }}</td>
+          <td>{{ section.settings.biker-row6col3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.biker-row7col1 }}</td>
+          <td>{{ section.settings.biker-row7col2 }}</td>
+          <td>{{ section.settings.biker-row7col3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ section.settings.biker-row8col1 }}</td>
+          <td>{{ section.settings.biker-row8col2 }}</td>
+          <td>{{ section.settings.biker-row8col3 }}</td>
+        </tr>
+      </table>
+      </div>
+      <!-- End new testing -->
+      
 
 
     </div>
@@ -338,257 +495,8 @@
 },
 "default": false
 },
-{
-"id": "rich-text",
-"type": "richtext",
-"label": "Primary Text",
-"default": "<p>Add your text here</p>"
-},
-{
-"type": "image_picker",
-"id": "model-img-1",
-"label": "Model image"
-},
-{
-"id": "model-name-1",
-"type": "text",
-"label": "Model Name"
-},
-{
-"id": "model-height-1",
-"type": "text",
-"label":"Model Height" 
-},
-{
-"id": "model-chest-1",
-"type": "text",
-"label":"Chest" 
-},
-{
-"id": "model-waist-1",
-"type": "text",
-"label":"Waist" 
-},
-{
-"id": "model-hips-1",
-"type": "text",
-"label":"Hips" 
-},
-{
-"id": "model-wears-1",
-"type": "text",
-"label": "Model Size"
-},
-{
-"type": "image_picker",
-"id": "model-img-2",
-"label": "Model image"
-},
-{
-"id": "model-name-2",
-"type": "text",
-"label": "Model Name"
-},
-{
-"id": "model-height-2",
-"type": "text",
-"label": "Model Height"
-},
-{
-"id": "model-chest-2",
-"type": "text",
-"label":"Chest" 
-},
-{
-"id": "model-waist-2",
-"type": "text",
-"label":"Waist" 
-},
-{
-"id": "model-hips-2",
-"type": "text",
-"label":"Hips" 
-},
-{
-"id": "model-wears-2",
-"type": "text",
-"label": "Model Size"
-},
-{
-"type": "image_picker",
-"id": "model-img-3",
-"label": "Model image"
-},
-{
-"id": "model-name-3",
-"type": "text",
-"label": "Model Name"
-},
-{
-"id": "model-height-3",
-"type": "text",
-"label": "Model Height"
-},
-{
-"id": "model-chest-3",
-"type": "text",
-"label":"Chest" 
-},
-{
-"id": "model-waist-3",
-"type": "text",
-"label":"Waist" 
-},
-{
-"id": "model-hips-3",
-"type": "text",
-"label":"Hips" 
-},
-{
-"id": "model-wears-3",
-"type": "text",
-"label": "Model Size"
-},
-{
-"type": "image_picker",
-"id": "model-img-4",
-"label": "Model image"
-},
-{
-"id": "model-name-4",
-"type": "text",
-"label": "Model Name"
-},
-{
-"id": "model-height-4",
-"type": "text",
-"label": "Model Height"
-},
-{
-"id": "model-chest-4",
-"type": "text",
-"label":"Chest" 
-},
-{
-"id": "model-waist-4",
-"type": "text",
-"label":"Waist" 
-},
-{
-"id": "model-hips-4",
-"type": "text",
-"label":"Hips" 
-},
-{
-"id": "model-wears-4",
-"type": "text",
-"label": "Model Size"
-},
-{
-"type": "image_picker",
-"id": "model-img-5",
-"label": "Model image"
-},
-{
-"id": "model-name-5",
-"type": "text",
-"label": "Model Name"
-},
-{
-"id": "model-height-5",
-"type": "text",
-"label": "Model Height"
-},
-{
-"id": "model-chest-5",
-"type": "text",
-"label":"Chest" 
-},
-{
-"id": "model-waist-5",
-"type": "text",
-"label":"Waist" 
-},
-{
-"id": "model-hips-5",
-"type": "text",
-"label":"Hips" 
-},
-{
-"id": "model-wears-5",
-"type": "text",
-"label": "Model Size"
-},
-{
-"type": "image_picker",
-"id": "model-img-6",
-"label": "Model image"
-},
-{
-"id": "model-name-6",
-"type": "text",
-"label": "Model Name"
-},
-{
-"id": "model-height-6",
-"type": "text",
-"label": "Model Height"
-},
-{
-"id": "model-chest-6",
-"type": "text",
-"label":"Chest" 
-},
-{
-"id": "model-waist-6",
-"type": "text",
-"label":"Waist" 
-},
-{
-"id": "model-hips-6",
-"type": "text",
-"label":"Hips" 
-},
-{
-"id": "model-wears-6",
-"type": "text",
-"label": "Model Size"
-},
-{
-"type": "image_picker",
-"id": "model-img-7",
-"label": "Model image"
-},
-{
-"id": "model-name-7",
-"type": "text",
-"label": "Model Name"
-},
-{
-"id": "model-height-7",
-"type": "text",
-"label": "Model Height"
-},
-{
-"id": "model-chest-7",
-"type": "text",
-"label":"Chest" 
-},
-{
-"id": "model-waist-7",
-"type": "text",
-"label":"Waist" 
-},
-{
-"id": "model-hips-7",
-"type": "text",
-"label":"Hips" 
-},
-{
-"id": "model-wears-7",
-"type": "text",
-"label": "Model Size"
-},
+
+
 {
 "id": "rich-text-chart",
 "type": "richtext",
@@ -769,7 +677,196 @@
 "id": "row7col5",
 "type": "text",
 "label": "Row7-Col5"
+},
+{
+"type": "header",
+"content": {
+"en": "Biker Shorts Sizing Guide"
 }
+},
+{
+"id": "biker-row1col1",
+"type": "text",
+"label": "Biker Row1-Col1"
+},
+{
+"id": "biker-row1col2",
+"type": "text",
+"label": "Biker Row1-Col2"
+},
+{
+"id": "biker-row1col3",
+"type": "text",
+"label": "Biker Row1-Col3"
+},
+{
+"id": "biker-row2col1",
+"type": "text",
+"label": "Biker Row2-Col1"
+},
+{
+"id": "biker-row2col2",
+"type": "text",
+"label": "Biker Row2-Col2"
+},
+{
+"id": "biker-row2col3",
+"type": "text",
+"label": "Biker Row2-Col3"
+},
+{
+"id": "biker-row3col1",
+"type": "text",
+"label": "Biker Row3-Col1"
+},
+{
+"id": "biker-row3col2",
+"type": "text",
+"label": "Biker Row3-Col2"
+},
+{
+"id": "biker-row3col3",
+"type": "text",
+"label": "Biker Row3-Col3"
+},
+{
+"id": "biker-row4col1",
+"type": "text",
+"label": "Biker Row4-Col1"
+},
+{
+"id": "biker-row4col2",
+"type": "text",
+"label": "Biker Row4-Col2"
+},
+{
+"id": "biker-row4col3",
+"type": "text",
+"label": "Biker Row4-Col3"
+},
+{
+"id": "biker-row5col1",
+"type": "text",
+"label": "Biker Row5-Col1"
+},
+{
+"id": "biker-row5col2",
+"type": "text",
+"label": "Biker Row5-Col2"
+},
+{
+"id": "biker-row5col3",
+"type": "text",
+"label": "Biker Row5-Col3"
+},
+{
+"id": "biker-row6col1",
+"type": "text",
+"label": "Biker Row6-Col1"
+},
+{
+"id": "biker-row6col2",
+"type": "text",
+"label": "Biker Row6-Col2"
+},
+{
+"id": "biker-row6col3",
+"type": "text",
+"label": "Biker Row6-Col3"
+},
+{
+"id": "biker-row7col1",
+"type": "text",
+"label": "Biker Row7-Col1"
+},
+{
+"id": "biker-row7col2",
+"type": "text",
+"label": "Biker Row7-Col2"
+},
+{
+"id": "biker-row7col3",
+"type": "text",
+"label": "Biker Row7-Col3"
+},
+{
+"id": "biker-row8col1",
+"type": "text",
+"label": "Biker Row8-Col1"
+},
+{
+"id": "biker-row8col2",
+"type": "text",
+"label": "Biker Row8-Col2"
+},
+{
+"id": "biker-row8col3",
+"type": "text",
+"label": "Biker Row8-Col3"
+},
+{
+"type": "header",
+"content": {
+"en": "0,1,& 2 Sizing Guide"
+}
+},
+  {
+"id": "crew-title",
+"type": "text",
+"label": "Section Heading"
+},
+{
+"id": "crew-row1col1",
+"type": "text",
+"label": "Crew Row1-Col1"
+},
+{
+"id": "crew-row1col2",
+"type": "text",
+"label": "Crew Row1-Col2"
+},
+{
+"id": "crew-row1col3",
+"type": "text",
+"label": "Crew Row1-Col3"
+},
+{
+"id": "crew-row2col1",
+"type": "text",
+"label": "Crew Row2-Col1"
+},
+{
+"id": "crew-row2col2",
+"type": "text",
+"label": "Crew Row2-Col2"
+},
+{
+"id": "crew-row2col3",
+"type": "text",
+"label": "Crew Row2-Col3"
+},
+{
+"id": "crew-row3col1",
+"type": "text",
+"label": "Crew Row3-Col1"
+},
+{
+"id": "crew-row3col2",
+"type": "text",
+"label": "Crew Row3-Col2"
+},
+{
+"id": "crew-row3col3",
+"type": "text",
+"label": "Crew Row3-Col3"
+},
+  {
+"id": "crew-subtext",
+"type": "text",
+"label": "Subtext"
+}
+
+
 ],
 "blocks": [
 {
@@ -915,6 +1012,10 @@
 
 
 <style>
+  
+  th {
+   background: #c3c3c3; 
+  }
 
   .size-modeldiv {
     width: auto;
@@ -934,6 +1035,10 @@
     display: inline-block;
     margin-right: 5px;
     font-size: 12px;
+  }
+  
+  .biker-size-div{
+   margin-top:25px;
   }
 
   /*Desktop styling*/
