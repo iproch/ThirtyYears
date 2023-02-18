@@ -67,7 +67,7 @@
 {% endcapture %}
 
 <div
-  class="homepage-sections-wrapper homepage-content--{{ section.id }} hero-video {{ desktopheight | strip }} {{ mobileheight | strip }} {{ isplaceholder | strip }}"
+  class="homepage-sections-wrapper homepage-content--{{ section.id }} hero-video {{ desktopheight | strip }} {{ mobileheight | strip }} {{ isplaceholder | strip }} desktop-only"
   data-wetheme-section-type="video--video-hero" data-wetheme-section-id="{{ section.id }}"
 >
     <div class="hero-video--wrapper">
@@ -93,6 +93,55 @@
           >
           </wetheme-video>
         </div>
+       <a href="{{ section.settings.button_link }}" tabindex="0"> <div class="hero-video--text">
+            <div class="hero-video--text-content {{ textalignment | strip }}">
+                <div class="text-content--inner{% if section.settings.textShadow %} text-shadow{% endif %} wow fadeInUp">
+                    <div class="hero-video--text-title">
+                        <h1 class="text-size-{{ section.settings.heading--text-size }}px wow fadeInUp">{{ section.settings.title }}</h1>
+                    </div>
+                    <div class="hero-video--text-subtitle">
+                        <p class="text-size-{{ section.settings.subheading--text-size }}px">{{ section.settings.subheading }}</p>
+                    </div>
+                    {% if section.settings.button_label != blank %}
+                    <div class="hero-video--button">
+                        {{ section.settings.button_label }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+         </a>
+
+<div
+  class="homepage-sections-wrapper homepage-content--{{ section.id }} hero-video {{ desktopheight | strip }} {{ mobileheight | strip }} {{ isplaceholder | strip }} mobile-only"
+  data-wetheme-section-type="video--video-hero" data-wetheme-section-id="{{ section.id }}"
+>
+    <div class="hero-video--wrapper">
+        {% assign type = 'mp4' %}
+        {% if section.settings.url contains "youtube.com" %}
+          {% assign type = 'youtube' %}
+        {% elsif section.settings.url contains "youtu.be" %}
+          {% assign type = 'youtube' %}
+        {% elsif section.settings.url contains "vimeo.com" %}
+          {% assign type = 'vimeo' %}
+        {% endif %}
+        <div class="hero-video--media type-{{ type }}">
+          <wetheme-video
+            section-id="{{ section.id }}"
+            v-bind:hero="true"
+            video-type="{{ type }}"
+            url="{{ section.settings.mobile-url }}"
+            v-bind:autoplay="true"
+            v-bind:loop="true"
+            v-bind:mute="true"
+            v-bind:hide-controls="true"
+            v-bind:overlay="false"
+          >
+          </wetheme-video>
+        </div>
+      <a href="{{ section.settings.button_link }}" tabindex="0">
         <div class="hero-video--text">
             <div class="hero-video--text-content {{ textalignment | strip }}">
                 <div class="text-content--inner{% if section.settings.textShadow %} text-shadow{% endif %} wow fadeInUp">
@@ -104,7 +153,7 @@
                     </div>
                     {% if section.settings.button_label != blank %}
                     <div class="hero-video--button">
-                        <a href="{{ section.settings.button_link }}" tabindex="0">{{ section.settings.button_label }}</a>
+                        {{ section.settings.button_label }}
                     </div>
                     {% endif %}
                 </div>
@@ -112,6 +161,7 @@
         </div>
     </div>
 </div>
+        </a>
 
 <style>
     .homepage-content--{{ section.id }} .hero-video--text {
@@ -149,7 +199,26 @@
             "id": "url",
             "type": "text",
             "label": {
-                "en": "Video URL",
+                "en": "Desktop Video URL",
+                "de": "Video-URL",
+                "es": "URL del vídeo",
+                "fr": "URL de la vidéo",
+                "pt-PT": "URL do Vídeo"
+            },
+            "info": {
+                "en": "Accepts YouTube, Vimeo and .mp4. Video will be muted and some devices may prevent autoplay [read more](https://flowdocs.wetheme.com/sections/video/video-hero)",
+                "de": "Akzeptiert YouTube, Vimeo und.mp4. Das Video wird stumm geschaltet, und einige Geräte verhindern möglicherweise die automatische Wiedergabe. [mehr erfahren](https://flowdocs.wetheme.com/sections/video/video-hero)",
+                "es": "Acepta YouTube, Vimeo y .mp4. El vídeo se silenciará y algunos dispositivos pueden evitar la reproducción automática [más información](https://flowdocs.wetheme.com/sections/video/video-hero)",
+                "fr": "Accepte YouTube, Vimeo et .mp4. Le son de la vidéo sera désactivé et certains appareils peuvent empêcher la lecture automatique [en savoir plus](https://flowdocs.wetheme.com/sections/video/video-hero)",
+                "pt-PT": "Aceita YouTube, Vimeo e .mp4. O vídeo será silenciado e alguns dispositivos podem impedir a reprodução automática [ler mais](https://flowdocs.wetheme.com/sections/video/video-hero)"
+            },
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+        },
+      {
+            "id": "mobile-url",
+            "type": "text",
+            "label": {
+                "en": "Mobile Video URL",
                 "de": "Video-URL",
                 "es": "URL del vídeo",
                 "fr": "URL de la vidéo",

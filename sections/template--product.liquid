@@ -236,6 +236,58 @@
                       </div>
 
                     {% endform %}
+                    
+                    <!-- Code added for custom tag message -->
+{% if product.tags contains 'biker' %}
+          <div class="product-badge-flex">
+                <div class="product-badge-div">
+                {% if section.settings.product-badge %}
+                        {% capture styles %}width: {{ section.settings.product-badge_max_width | escape }}px{% endcapture %}
+                      <center>  {% render 'responsive-image' with section.settings.product-badge, class:'product-badge', alt: '', blur: false, styles: styles %}
+                  </center>{% endif %}
+                </div>
+            <div class="product-badge-div">
+                {% if section.settings.product-badge2 %}
+                        {% capture styles %}width: {{ section.settings.product-badge2_max_width | escape }}px{% endcapture %}
+                        <center>{% render 'responsive-image' with section.settings.product-badge2, class:'product-badge', alt: '', blur: false, styles: styles %}
+                    
+              </center>{% endif %}
+                </div>
+            <div class="product-badge-div">
+                {% if section.settings.product-badge3 %}
+                        {% capture styles %}width: {{ section.settings.product-badge3_max_width | escape }}px{% endcapture %}
+                        <center>{% render 'responsive-image' with section.settings.product-badge3, class:'product-badge', alt: '', blur: false, styles: styles %}
+              </center> {% endif %}
+                </div>
+                    </div>
+{% endif %}    
+<!-- end Tag code -->
+                    
+                                 <!-- Code added for custom tag message -->
+{% if product.tags contains 'legging' %}
+          <div class="product-badge-flex">
+                <div class="product-badge-div">
+                {% if section.settings.product-badge4-legging %}
+                        {% capture styles %}width: {{ section.settings.product-badge_max_width | escape }}px{% endcapture %}
+                      <center>  {% render 'responsive-image' with section.settings.product-badge, class:'product-badge', alt: '', blur: false, styles: styles %}
+                  </center>{% endif %}
+                </div>
+            <div class="product-badge-div">
+                {% if section.settings.product-badge5-legging %}
+                        {% capture styles %}width: {{ section.settings.product-badge2_max_width | escape }}px{% endcapture %}
+                        <center>{% render 'responsive-image' with section.settings.product-badge2, class:'product-badge', alt: '', blur: false, styles: styles %}
+                    
+              </center>{% endif %}
+                </div>
+            <div class="product-badge-div">
+                {% if section.settings.product-badge6-legging %}
+                        {% capture styles %}width: {{ section.settings.product-badge3_max_width | escape }}px{% endcapture %}
+                        <center>{% render 'responsive-image' with section.settings.product-badge3, class:'product-badge', alt: '', blur: false, styles: styles %}
+              </center> {% endif %}
+                </div>
+                    </div>
+{% endif %}    
+<!-- end Tag code -->
 
                     {% if section.settings.enable_out_of_stock_form %}
                       {% render 'out-of-stock-form' %}
@@ -467,6 +519,246 @@
         {
             "type": "range",
             "id": "trust-badge_max_width",
+            "min": 10,
+            "max": 920,
+            "step": 10,
+            "unit": {
+                "en": "px",
+                "de": "px",
+                "es": "px",
+                "fr": "px",
+                "pt-PT": "px"
+            },
+            "label": {
+                "en": "Width",
+                "de": "Breite",
+                "es": "Ancho",
+                "fr": "Largeur",
+                "pt-PT": "Largura"
+            },
+            "default": 260
+        },
+      {
+            "type": "image_picker",
+            "id": "product-badge",
+            "label": {
+                "en": "Product badge - Biker",
+                "de": "Vertrauenssiegel",
+                "es": "Distintivo de confianza",
+                "fr": "Badge de confiance",
+                "pt-PT": "Crachá de confiança"
+            },
+            "info": {
+                "en": "100 x 300px recommended. [Learn more](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "de": "100 x 300 px empfohlen. [Mehr erfahren](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "es": "Recomendado: 100 x 300px. [Aprenda más](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "fr": "100 x 300 px recommandé. [En savoir plus] (https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "pt-PT": "100 x 300px recomendado. [Saiba mais](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)"
+            }
+        },
+        {
+            "type": "range",
+            "id": "product-badge_max_width",
+            "min": 10,
+            "max": 920,
+            "step": 10,
+            "unit": {
+                "en": "px",
+                "de": "px",
+                "es": "px",
+                "fr": "px",
+                "pt-PT": "px"
+            },
+            "label": {
+                "en": "Width",
+                "de": "Breite",
+                "es": "Ancho",
+                "fr": "Largeur",
+                "pt-PT": "Largura"
+            },
+            "default": 260
+        },
+{
+            "type": "image_picker",
+            "id": "product-badge2",
+            "label": {
+                "en": "Product badge - Biker",
+                "de": "Vertrauenssiegel",
+                "es": "Distintivo de confianza",
+                "fr": "Badge de confiance",
+                "pt-PT": "Crachá de confiança"
+            },
+            "info": {
+                "en": "100 x 300px recommended. [Learn more](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "de": "100 x 300 px empfohlen. [Mehr erfahren](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "es": "Recomendado: 100 x 300px. [Aprenda más](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "fr": "100 x 300 px recommandé. [En savoir plus] (https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "pt-PT": "100 x 300px recomendado. [Saiba mais](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)"
+            }
+        },
+        {
+            "type": "range",
+            "id": "product-badge2_max_width",
+            "min": 10,
+            "max": 920,
+            "step": 10,
+            "unit": {
+                "en": "px",
+                "de": "px",
+                "es": "px",
+                "fr": "px",
+                "pt-PT": "px"
+            },
+            "label": {
+                "en": "Width",
+                "de": "Breite",
+                "es": "Ancho",
+                "fr": "Largeur",
+                "pt-PT": "Largura"
+            },
+            "default": 260
+        },
+{
+            "type": "image_picker",
+            "id": "product-badge3",
+            "label": {
+                "en": "Product badge - Biker",
+                "de": "Vertrauenssiegel",
+                "es": "Distintivo de confianza",
+                "fr": "Badge de confiance",
+                "pt-PT": "Crachá de confiança"
+            },
+            "info": {
+                "en": "100 x 300px recommended. [Learn more](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "de": "100 x 300 px empfohlen. [Mehr erfahren](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "es": "Recomendado: 100 x 300px. [Aprenda más](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "fr": "100 x 300 px recommandé. [En savoir plus] (https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "pt-PT": "100 x 300px recomendado. [Saiba mais](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)"
+            }
+        },
+        {
+            "type": "range",
+            "id": "product-badge3_max_width",
+            "min": 10,
+            "max": 920,
+            "step": 10,
+            "unit": {
+                "en": "px",
+                "de": "px",
+                "es": "px",
+                "fr": "px",
+                "pt-PT": "px"
+            },
+            "label": {
+                "en": "Width",
+                "de": "Breite",
+                "es": "Ancho",
+                "fr": "Largeur",
+                "pt-PT": "Largura"
+            },
+            "default": 260
+        },
+{
+            "type": "image_picker",
+            "id": "product-badge4-legging",
+            "label": {
+                "en": "Product badge - Legging",
+                "de": "Vertrauenssiegel",
+                "es": "Distintivo de confianza",
+                "fr": "Badge de confiance",
+                "pt-PT": "Crachá de confiança"
+            },
+            "info": {
+                "en": "100 x 300px recommended. [Learn more](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "de": "100 x 300 px empfohlen. [Mehr erfahren](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "es": "Recomendado: 100 x 300px. [Aprenda más](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "fr": "100 x 300 px recommandé. [En savoir plus] (https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "pt-PT": "100 x 300px recomendado. [Saiba mais](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)"
+            }
+        },
+        {
+            "type": "range",
+            "id": "product-badge4_max_width",
+            "min": 10,
+            "max": 920,
+            "step": 10,
+            "unit": {
+                "en": "px",
+                "de": "px",
+                "es": "px",
+                "fr": "px",
+                "pt-PT": "px"
+            },
+            "label": {
+                "en": "Width",
+                "de": "Breite",
+                "es": "Ancho",
+                "fr": "Largeur",
+                "pt-PT": "Largura"
+            },
+            "default": 260
+        },
+{
+            "type": "image_picker",
+            "id": "product-badge5-legging",
+            "label": {
+                "en": "Product badge - Legging",
+                "de": "Vertrauenssiegel",
+                "es": "Distintivo de confianza",
+                "fr": "Badge de confiance",
+                "pt-PT": "Crachá de confiança"
+            },
+            "info": {
+                "en": "100 x 300px recommended. [Learn more](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "de": "100 x 300 px empfohlen. [Mehr erfahren](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "es": "Recomendado: 100 x 300px. [Aprenda más](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "fr": "100 x 300 px recommandé. [En savoir plus] (https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "pt-PT": "100 x 300px recomendado. [Saiba mais](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)"
+            }
+        },
+        {
+            "type": "range",
+            "id": "product-badge5_max_width",
+            "min": 10,
+            "max": 920,
+            "step": 10,
+            "unit": {
+                "en": "px",
+                "de": "px",
+                "es": "px",
+                "fr": "px",
+                "pt-PT": "px"
+            },
+            "label": {
+                "en": "Width",
+                "de": "Breite",
+                "es": "Ancho",
+                "fr": "Largeur",
+                "pt-PT": "Largura"
+            },
+            "default": 260
+        },
+{
+            "type": "image_picker",
+            "id": "product-badge6-legging",
+            "label": {
+                "en": "Product badge - Legging",
+                "de": "Vertrauenssiegel",
+                "es": "Distintivo de confianza",
+                "fr": "Badge de confiance",
+                "pt-PT": "Crachá de confiança"
+            },
+            "info": {
+                "en": "100 x 300px recommended. [Learn more](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "de": "100 x 300 px empfohlen. [Mehr erfahren](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "es": "Recomendado: 100 x 300px. [Aprenda más](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "fr": "100 x 300 px recommandé. [En savoir plus] (https://flowdocs.wetheme.com/templates/product-pages/trust-badges)",
+                "pt-PT": "100 x 300px recomendado. [Saiba mais](https://flowdocs.wetheme.com/templates/product-pages/trust-badges)"
+            }
+        },
+        {
+            "type": "range",
+            "id": "product-badge6_max_width",
             "min": 10,
             "max": 920,
             "step": 10,
@@ -865,3 +1157,29 @@
     ]
 }
 {% endschema %}
+
+<style type="text/css">
+  .product-badge{
+  margin-left:5%;
+    margin-right:5%;
+    
+    padding:2%;
+  }
+  
+  
+  .product-badge-flex{
+   display:flex; 
+  }
+  
+  @media screen and (max-width: 480px){
+    .product-badge-flex{
+     display:block; 
+      text-align:center;
+      width:100%;
+    }
+    
+    .product-badge-div{
+     text-align:center; 
+    }
+  }
+</style>
