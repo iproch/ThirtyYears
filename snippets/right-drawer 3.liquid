@@ -1,0 +1,262 @@
+<div class="right-drawer-vue">
+  <wetheme-right-drawer
+    search-url="{{ routes.search_url }}"
+    login-url="{{ routes.account_login_url }}"
+  >
+  </wetheme-right-drawer>
+</div>
+<script type="text/x-template" id="wetheme-right-drawer-template">
+  <div>
+    <transition name="drawer-right">
+      <div class="drawer drawer--right drawer--cart" v-if="isOpen">
+        <div class="drawer__header sitewide--title-wrapper">
+          <div class="drawer__close js-drawer-close">
+            <button type="button" class="icon-fallback-text" v-on:click="close">
+              <span class="fallback-text">{{ 'cart.general.close_cart' | t }}</span>
+            </button>
+          </div>
+          <div class="drawer__title h2 page--title">
+            <span v-if="type === 'cart'"">{{ 'cart.general.title' | t }}</span>
+            <span class="sr-only" v-if="type === 'shop-now'">{{ 'products.product.quick_shop' | t }}</span>
+            <span v-if="type === 'login'">{{ 'customer.login.title' | t }}</span>
+            <span v-if="type === 'search'">{{ 'general.search.title' | t }}</span>
+          </div>
+        </div>
+
+        <div id="CartContainer" v-if="type === 'cart'">
+          <form action="{{ routes.cart_url }}" method="post" novalidate class="cart ajaxcart" v-if="cart">
+            <p class="empty-cart" v-if="cart.item_count === 0">{{ 'cart.general.empty' | t }}</p>
+
+            <div class="ajaxcart__inner" v-if="cart.item_count > 0">
+              <div class="ajaxcart__product" v-for="(item, index) in cart.items" :key="item.id">
+                <div class="ajaxcart__row" v-bind:data-line="index + 1"
+                  v-bind:class="{ 'is-loading': index + 1 === lineQuantityUpdating }"
+                >
+                  <div class="grid display-table">
+                    <div class="grid__item small--one-whole medium--one-quarter large--one-quarter medium--display-table-cell">
+                      <a v-bind:href="item.url" class="ajaxcart__product-image">
+                        <img
+                          src="#"
+                          alt=""
+                          v-responsive="item.image"
+                          v-bind:alt="item.product_title"
+                          v-if="item.image"
+                        />
+                        <img v-if="!item.image" src="//cdn.shopify.com/s/assets/admin/no-image-medium-cc9732cb976dd349a0df1d39816fbcc7.gif" />
+                      </a>
+                    </div>
+                    <div class="grid__item small--one-whole medium--two-quarters large--two-quarters medium--display-table-cell">
+                      <p>
+                        <a v-bind:href="item.url" class="ajaxcart__product-name" v-text="item.product_title"></a>
+                        <span class="ajaxcart__product-meta" v-if="item.variant_title" v-text="item.variant_title"></span>
+                        <span class="ajaxcart__product-meta" v-for="prop in item.properties" :key="prop[0]" v-text="`${prop[0]}: ${prop[1]}`"></span>
+                        {% if settings.cart_vendor_enable %}
+                          <span class="ajaxcart__product-meta" v-text="item.vendor"></span>
+                        {% endif %}
+                      </p>
+
+                      <div class="text-center">
+                        <span class="ajaxcart-item__price-strikethrough"
+                          v-if="item.original_line_price > 0 && item.final_line_price < item.original_line_price"
+                        >
+                          <s v-money="item.original_line_price">></s>
+                        </span>
+                        <span class="ajaxcart-item__price" v-money="item.final_line_price"></span>
+
+                        <div class="unit-price" v-if="item.unit_price">
+                            (<span class="unit-price__price" v-money="item.unit_price"></span>
+                            <span> / </span>
+                            <span class="unit-price__ref-value" v-text="item.unit_price_measurement.reference_value"></span>
+                            <span class="unit-price__ref-unit" v-text="item.unit_price_measurement.reference_unit"></span>)
+                        </div>
+                      </div>
+
+                      <ul class="ajaxcart-item__discounts" aria-label="{{ 'customer.order.discount' | t }}">
+                        <li class="ajaxcart-item__discount" v-for="discountAllocation in item.line_level_discount_allocations" :key="discountAllocation.id">
+                          <span class="ajaxcart-item__discount_title" v-text="discountAllocation.discount_application.title"></span>
+                          <span class="ajaxcart-item__discount_money">- <span v-money="discountAllocation.amount"></span></span>
+                        </li>
+                      </ul>
+
+                      <div class="grid--full text-center ajaxcart__quantity-wrapper">
+                        <div class="grid__item">
+                          <div class="ajaxcart__qty">
+                            <button
+                              type="button"
+                              class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text"
+                              v-on:click="setQuantity(index + 1, item.quantity - 1)"
+                            >
+                              <i class="fa fa-minus" aria-hidden="true"></i>
+                              <span class="fallback-text">&minus;</span>
+                            </button>
+                            <input
+                              type="text"
+                              name="updates[]"
+                              class="ajaxcart__qty-num"
+                              v-bind:value="item.quantity"
+                              min="0"
+                              aria-label="quantity"
+                              pattern="[0-9]*"
+                              v-on:change="setQuantity(index + 1, parseInt($event.target.value, 10))"
+                            />
+                            <button
+                              type="button"
+                              class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text"
+                              v-on:click="setQuantity(index + 1, item.quantity + 1)"
+                            >
+                              <i class="fa fa-plus" aria-hidden="true"></i>
+                              <span class="fallback-text">+</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="ajaxcart__qty-remove icon-fallback-text"
+                        v-on:click="setQuantity(index + 1, 0)"
+                      >
+                        <span class="fallback-text">X</span>
+                      </button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ajaxcart__footer-wrapper">
+                {% if settings.cart_notes_enable %}
+                  <div class="ajax-cart--notes">
+                    <label class="ajaxcart__special_instructions" for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+                    <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ note }}</textarea>
+                  </div>
+                {% endif %}
+
+                <div class="ajaxcart__footer">
+                  <div class="grid--full">
+                    <ul class="grid__item ajaxcart__discounts" style="margin: 0">
+                      <li class="ajaxcart__discount" v-for="application in cart.cart_level_discount_applications">
+                        <span class="ajaxcart__discount_money" v-money="application.total_allocated_amount"></span>
+                        <span class="ajaxcart__discount_title" v-text="application.title"></span>
+                      </li>
+                    </ul>
+
+                    <div class="grid__item ajaxcart__subtotal_header">
+                      <p>{{ 'cart.general.subtotal' | t }}</p>
+                    </div>
+                
+
+                    <p class="grid__item ajaxcart__price-strikeout text-center" v-if="cart.original_total_price > cart.total_price">
+                      <s v-money="cart.original_total_price"></s>
+                    </p>
+
+                    <div class="grid__item ajaxcart__subtotal">
+                      <p v-money="cart.total_price"></p>
+                    </div>
+                  </div>
+                  
+                          {% assign shipping_value = 15000 %}
+{% assign cart_total = cart.total_price %}
+{% assign shipping_value_left = shipping_value | minus: cart_total %}
+<div style="text-align:center;">
+<p class="free-shipping-threshold-text">
+{% if shipping_value_left > 0 %}
+  You're only {{ shipping_value_left | money }} away from <b>FREE</b> shipping! <b><a href="/collections/">Continue shopping</a> </b>
+{% else %}
+  <b>Your order qualifies for FREE shipping!</b>
+{% endif %}
+</p></div>
+
+                  <div class="cart__shipping rte">
+                    {%- capture taxes_shipping_checkout -%}
+                      {%- if shop.taxes_included and shop.shipping_policy.body != blank -%}
+                        {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                      {%- elsif shop.taxes_included -%}
+                        {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
+                      {%- elsif shop.shipping_policy.body != blank -%}
+                        {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                      {%- else -%}
+                        {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
+                      {%- endif -%}
+                    {%- endcapture -%}
+                    <p class="text-center">{{ taxes_shipping_checkout }}</p>
+                  </div>
+                  
+                  <!-- Route Code Edited 03/08/2021 -->
+                  <div class="route-div" disable-reorder desktop-align="center"></div>
+                  <!-- Route Code End -->
+
+                  <button type="submit" class="cart__checkout" name="checkout">
+                    {{ 'cart.general.checkout' | t }}
+                  </button>
+
+                  {% if additional_checkout_buttons and settings.enable-additional-checkout-buttons %}
+                    <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
+                      {{ content_for_additional_checkout_buttons }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div id="ShopNowContainer" v-if="type === 'shop-now'">
+          <div ref="shopNowContent"></div>
+        </div>
+
+        <div id="SearchContainer" v-if="type === 'search'">
+          <div class="wrapper search-drawer">
+            <div class="input-group">
+              <input
+                type="search" name="q" id="search-input" placeholder="{{ 'general.search.placeholder' | t }}"
+                class="input-group-field" aria-label="{{ 'general.search.placeholder' | t }}" autocomplete="off"
+                v-model="searchQuery"
+              />
+              <span class="input-group-btn">
+                <button type="submit" class="btn icon-fallback-text">
+                  <i class="fa fa-search"></i>
+                  <span class="fallback-text">{{ 'general.search.submit' | t }}</span>
+                </button>
+              </span>
+            </div>
+            <div id="search-results" class="grid-uniform">
+              <div v-if="searching">
+                <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">{{ 'collections.paginate.loading' | t }}</span>
+              </div>
+              <div v-text="searchSummary" v-if="!searching"></div>
+              <div v-for="group in searchGroups" v-if="!searching">
+                <h2 v-text="group.name"></h2>
+                <div class="indiv-search-listing-grid" v-for="result in group.results">
+                  <div class="grid">
+                    <div class="grid__item large--one-quarter live-search--image" v-if="result.image">
+                      <a v-bind:href="result.url" v-bind:title="result.title">
+                        <img
+                          class="lazyload"
+                          v-bind:src="result.image"
+                          v-bind:alt="result.title"
+                        />
+                      </a>
+                    </div>
+                    <div class="grid__item large--three-quarters line-search-content">
+                      <h3>
+                        <a v-bind:href="result.url" v-text="result.title"></a>
+                      </h3>
+                      <div v-html="result.price_html"></div>
+                      <p v-text="result.content"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a v-if="searchHasMore" id="search-show-more" v-bind:href="searchUrlWithQuery" class="btn">{{ 'collections.general.see_more' | t }}</a>
+          </div>
+        </div>
+
+        <div id="LogInContainer" v-if="type === 'login'">
+          <div ref="loginContent"></div>
+        </div>
+      </div>
+    </transition>
+  </div>
+</script>
