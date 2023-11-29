@@ -1,0 +1,194 @@
+<style>
+    .split50{
+      position:relative;
+  }
+
+      .homepage-section--indiv-product-wrapper{
+      padding:0 !important;
+  }
+  .prod-txt{
+      text-transform: uppercase;
+      line-height: 100%;
+      font-weight: 800;
+      margin: 0;
+  }
+  .right-text-div-double{
+      position: absolute;
+      right: 25%;
+      bottom:0;
+  }
+  @media (max-width:768px){
+  .full-row{
+      display: flex;
+      padding: 2.5%;
+      column-gap: 2.5%;
+      flex-direction: column;
+      row-gap: 5%;
+  }
+  .split50{
+      margin-bottom:20px;
+  }
+  .right-text-div-double{
+      position: absolute;
+      right: 3%;
+      bottom:0;
+  }
+  }
+
+  @media (min-width:769px){
+  .full-row{
+      display: flex;
+      padding: 2.5%;
+      column-gap: 2.5%;
+  }
+
+  }
+</style>
+<div class="full-row">
+  <div class="split50">
+    <a href="{{ section.settings.product_link}}">
+      {{ section.settings.primary_img | image_url: width: 1500 | image_tag }}
+
+      <p class="prod-txt">{{ section.settings.product_txt }}</p>
+      <p class="prod-txt">{{ section.settings.product_txt2 }}</p>
+      <p class="prod-txt">{{ section.settings.product_txt3 }}</p>
+
+      <div class="right-text-div-double">
+        <p class="prod-txt-right">{{ section.settings['product_txt-alt'] }}</p>
+        <p class="prod-txt-right">{{ section.settings['product_txt2-alt'] }}</p>
+        <p class="prod-txt-right">{{ section.settings['product_txt3-alt'] }}</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="split50">
+    <a href="{{ section.settings.product_link2}}">
+      {{ section.settings.primary_img2 | image_url: width: 1500 | image_tag }}
+
+      <p class="prod-txt">{{ section.settings.product_2_txt }}</p>
+      <p class="prod-txt">{{ section.settings.product_2_txt2 }}</p>
+      <p class="prod-txt">{{ section.settings.product_2_txt3 }}</p>
+
+      <div class="right-text-div-double">
+        <p class="prod-txt">{{ section.settings['product_2_txt-alt'] }}</p>
+        <p class="prod-txt">{{ section.settings['product_2_txt2-alt'] }}</p>
+        <p class="prod-txt">{{ section.settings['product_2_txt3-alt'] }}</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": {
+        "en": "Featured product - double",
+        "de": "Vorgestelltes Produkt",
+        "es": "Producto destacado",
+        "fr": "Produit en vedette",
+        "pt-PT": "Produto em destaque"
+    },
+    "class": "homepage-section--indiv-product-wrapper",
+    "settings": [
+
+        {
+  "type": "image_picker",
+  "id": "primary_img",
+  "label": "Image"
+},
+{
+  "type": "url",
+  "id": "product_link",
+  "label": "Product link"
+},
+{
+  "type": "text",
+  "id": "product_txt",
+  "label": "Product title"
+},
+{
+  "type": "text",
+  "id": "product_txt2",
+  "label": "Product color"
+},
+{
+  "type": "text",
+  "id": "product_txt3",
+  "label": "Price"
+},
+{
+  "type": "text",
+  "id": "product_txt-alt",
+  "label": "Right Product title"
+},
+{
+  "type": "text",
+  "id": "product_txt2-alt",
+  "label": "Right Product color"
+},
+{
+  "type": "text",
+  "id": "product_txt3-alt",
+  "label": "Right Price"
+},
+{
+    "type": "image_picker",
+    "id": "primary_img2",
+    "label": "Image"
+  },
+  {
+    "type": "url",
+    "id": "product_link2",
+    "label": "Product link"
+  },
+  {
+    "type": "text",
+    "id": "product_2_txt",
+    "label": "Product title"
+  },
+  {
+    "type": "text",
+    "id": "product_2_txt2",
+    "label": "Product color"
+  },
+  {
+    "type": "text",
+    "id": "product_2_txt3",
+    "label": "Price"
+  },
+  {
+    "type": "text",
+    "id": "product_2_txt-alt",
+    "label": "Product title"
+  },
+  {
+    "type": "text",
+    "id": "product_2_txt2-alt",
+    "label": "Product color"
+  },
+  {
+    "type": "text",
+    "id": "product_2_txt3-alt",
+    "label": "Price"
+  }
+
+    ],
+    "presets": [
+        {
+            "name": {
+                "en": "Featured product - double",
+                "de": "Vorgestelltes Produkt",
+                "es": "Producto destacado",
+                "fr": "Produit en vedette",
+                "pt-PT": "Produto em destaque"
+            },
+            "category": {
+                "en": "Products",
+                "de": "Produkte",
+                "es": "Productos",
+                "fr": "Produits",
+                "pt-PT": "Produtos"
+            }
+        }
+    ]
+}
+{% endschema %}

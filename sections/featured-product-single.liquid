@@ -1,0 +1,141 @@
+<style>
+  .homepage-section--indiv-product-wrapper{
+      padding:0 !important;
+  }
+  .prod-txt{
+      text-transform: uppercase;
+      line-height: 100%;
+      font-weight: 800;
+      margin: 0;
+  }
+
+  .prod-txt-right{
+      text-transform: uppercase;
+      line-height: 100%;
+      font-weight: 800;
+      margin: 0;
+  }
+
+  .right-text-div{
+      position: absolute;
+      right: 0;
+  }
+
+  .left-text-div{
+      position: absolute;
+  }
+
+
+  .primary-div-padding{
+      padding:5% 25% 5% 25%;
+  }
+
+  .relative-div{
+      position:relative;
+  }
+
+  @media (max-width:768px){
+      .primary-div-padding{
+          padding:2.5%;
+          margin-bottom:40px;
+  }
+  .right-text-div{
+      position: absolute;
+      right: 0;
+  }
+  }
+</style>
+<div class="primary-div-padding">
+  <div class="relative-div">
+    <a href="{{ section.settings.product_link}}">
+      {{ section.settings.primary_img | image_url: width: 1500 | image_tag }}
+
+      <div class="left-text-div">
+        <p class="prod-txt">{{ section.settings.product_txt }}</p>
+        <p class="prod-txt">{{ section.settings.product_txt2 }}</p>
+        <p class="prod-txt">{{ section.settings.product_txt3 }}</p>
+      </div>
+
+      <div class="right-text-div">
+        <p class="prod-txt-right">{{ section.settings['product_txt-alt'] }}</p>
+        <p class="prod-txt-right">{{ section.settings['product_txt2-alt'] }}</p>
+        <p class="prod-txt-right">{{ section.settings['product_txt3-alt'] }}</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": {
+        "en": "Featured product - single",
+        "de": "Vorgestelltes Produkt",
+        "es": "Producto destacado",
+        "fr": "Produit en vedette",
+        "pt-PT": "Produto em destaque"
+    },
+    "class": "homepage-section--indiv-product-wrapper",
+    "settings": [
+
+        {
+  "type": "image_picker",
+  "id": "primary_img",
+  "label": "Image"
+},
+{
+  "type": "url",
+  "id": "product_link",
+  "label": "Product link"
+},
+{
+  "type": "text",
+  "id": "product_txt",
+  "label": "Product title"
+},
+{
+  "type": "text",
+  "id": "product_txt2",
+  "label": "Product color"
+},
+{
+  "type": "text",
+  "id": "product_txt3",
+  "label": "Price"
+},
+{
+  "type": "text",
+  "id": "product_txt-alt",
+  "label": "Right Product title"
+},
+{
+  "type": "text",
+  "id": "product_txt2-alt",
+  "label": "Right Product color"
+},
+{
+  "type": "text",
+  "id": "product_txt3-alt",
+  "label": "Right Price"
+}
+
+    ],
+    "presets": [
+        {
+            "name": {
+                "en": "Featured product - single",
+                "de": "Vorgestelltes Produkt",
+                "es": "Producto destacado",
+                "fr": "Produit en vedette",
+                "pt-PT": "Produto em destaque"
+            },
+            "category": {
+                "en": "Products",
+                "de": "Produkte",
+                "es": "Productos",
+                "fr": "Produits",
+                "pt-PT": "Produtos"
+            }
+        }
+    ]
+}
+{% endschema %}

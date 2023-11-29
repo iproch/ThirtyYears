@@ -5,7 +5,11 @@
   >
   </wetheme-right-drawer>
 </div>
-<script type="text/x-template" id="wetheme-right-drawer-template">
+<script
+  type="text/x-template"
+  id="wetheme-right-drawer-template"
+>
+  
   <div>
     <transition name="drawer-right">
       <div class="drawer drawer--right drawer--cart" v-if="isOpen">
@@ -154,7 +158,7 @@
                       <p v-money="cart.total_price"></p>
                     </div>
                   </div>
-                  
+                  {% comment %}
                           {% assign shipping_value = 15000 %}
 {% assign cart_total = cart.total_price %}
 {% assign shipping_value_left = shipping_value | minus: cart_total %}
@@ -165,7 +169,7 @@
 {% else %}
   <b>Your order qualifies for FREE shipping!</b>
 {% endif %}
-</p></div>
+</p></div>{% endcomment %}
 
                   <div class="cart__shipping rte">
                     {%- capture taxes_shipping_checkout -%}

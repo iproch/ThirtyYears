@@ -1,24 +1,23 @@
-
 <!-- /templates/cart.liquid -->
 {% comment %}
-
   For info on test orders:
     - General http://docs.shopify.com/manual/your-store/orders/test-orders
     - Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
-
 {% endcomment %}
 
 {% if cart.item_count > 0 %}
+  <div class="sitewide--title-wrapper">
+    <h1 class="page--title">{{ 'cart.general.title' | t }}</h1>
+  </div>
 
-
-
-<div class="sitewide--title-wrapper">
-
-  <h1 class="page--title">{{ 'cart.general.title' | t }}</h1>
-
-</div>
-
-  <form action="{{ routes.cart_url }}" method="post" novalidate class="cart table-wrap" data-wetheme-section-type="template--cart" data-wetheme-section-id="template--cart">
+  <form
+    action="{{ routes.cart_url }}"
+    method="post"
+    novalidate
+    class="cart table-wrap"
+    data-wetheme-section-type="template--cart"
+    data-wetheme-section-id="template--cart"
+  >
     <table class="cart-table full table--responsive">
       <thead class="cart__row cart__header-labels">
         <th scope="row" colspan="2" class="text-center"></th>
@@ -45,7 +44,8 @@
               {% unless item.variant.title contains 'Default' %}
                 <div class="cart__meta-text">
                   {% for option in item.product.options %}
-                    {{ option }}: {{ item.variant.options[forloop.index0] }}<br/>
+                    {{ option }}: {{ item.variant.options[forloop.index0] -}}
+                    <br>
                   {% endfor %}
                 </div>
               {% endunless %}
@@ -74,7 +74,7 @@
                     {% else %}
                       {{ p.last }}
                     {% endif %}
-                    <br />
+                    <br>
                   {% endif %}
                 {% endfor %}
               {% endif %}
@@ -84,32 +84,56 @@
               </a>
             </td>
             <td class="text-center" data-label="{{ 'cart.label.price' | t }}">
-                {%- if item.original_price != item.final_price -%}
-                  <span class="hidden">{{ 'products.general.regular_price' | t }}</span>
-                  <span class="h5">
-                    <del><span class="money">{{ item.original_price | money }}</span></del>
-                  </span>
-                  <span class="hidden">{{ 'products.general.sale_price' | t }}</span>
+              {%- if item.original_price != item.final_price -%}
+                <span class="hidden">{{ 'products.general.regular_price' | t }}</span>
                 <span class="h5">
-                  <span class="order-discount discount--sale-color"><span class="money">{{ item.final_price | money }}</span></span>
+                  <del
+                    ><span class="money">{{ item.original_price | money }}</span></del
+                  >
                 </span>
-                {%- else -%}
+                <span class="hidden">{{ 'products.general.sale_price' | t }}</span>
+                <span class="h5">
+                  <span class="order-discount discount--sale-color"
+                    ><span class="money">{{ item.final_price | money }}</span></span
+                  >
+                </span>
+              {%- else -%}
                 <span class="h5">
                   <span class="money">{{ item.original_price | money }}</span>
                 </span>
-                {%- endif -%}
+              {%- endif -%}
 
-                {% render 'unit-price-measurement-variant', variant: item %}
+              {% render 'unit-price-measurement-variant', variant: item %}
             </td>
             <td class="text-center" data-label="{{ 'cart.label.quantity' | t }}">
               <div class="js-qty-wrapper">
                 <div class="js-qty">
-                  <button type="button" class="js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="" data-qty="0">
+                  <button
+                    type="button"
+                    class="js-qty__adjust js-qty__adjust--minus icon-fallback-text"
+                    data-id=""
+                    data-qty="0"
+                  >
                     <i class="fa fa-minus" aria-hidden="true"></i>
                     <span class="fallback-text">−</span>
                   </button>
-                  <input type="text" class="js-qty__num" value="{{ item.quantity }}" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="updates[]" id="updates_{{ item.id }}">
-                  <button type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="" data-qty="11">
+                  <input
+                    type="text"
+                    class="js-qty__num"
+                    value="{{ item.quantity }}"
+                    min="1"
+                    data-id=""
+                    aria-label="quantity"
+                    pattern="[0-9]*"
+                    name="updates[]"
+                    id="updates_{{ item.id }}"
+                  >
+                  <button
+                    type="button"
+                    class="js-qty__adjust js-qty__adjust--plus icon-fallback-text"
+                    data-id=""
+                    data-qty="11"
+                  >
                     <i class="fa fa-plus" aria-hidden="true"></i>
                     <span class="fallback-text">+</span>
                   </button>
@@ -118,23 +142,34 @@
             </td>
             <td class="text-center cart-total-label" data-label="{{ 'cart.label.total' | t }}">
               {%- if item.original_line_price != item.final_line_price -%}
-  							<span class="hidden">{{ 'products.general.regular_price' | t }}</span>
+                <span class="hidden">{{ 'products.general.regular_price' | t }}</span>
                 <span class="h5">
-  						    <del><span class="money">{{ item.original_line_price | money }}</span></del>
+                  <del
+                    ><span class="money">{{ item.original_line_price | money }}</span></del
+                  >
                 </span>
-  							<span class="hidden">{{ 'products.general.sale_price' | t }}</span>
+                <span class="hidden">{{ 'products.general.sale_price' | t }}</span>
                 <span class="h5">
-  							  <span class="order-discount discount--sale-color"><span class="money">{{ item.final_line_price | money }}</span></span>
+                  <span class="order-discount discount--sale-color"
+                    ><span class="money">{{ item.final_line_price | money }}</span></span
+                  >
                 </span>
-  						{%- else -%}
-  							<span class="money">{{ item.original_line_price | money }}</span>
-  						{%- endif -%}
+              {%- else -%}
+                <span class="money">{{ item.original_line_price | money }}</span>
+              {%- endif -%}
 
               {%- if item.line_level_discount_allocations != blank -%}
-                <ul class="order-discount--cart-list discount--sale-color" aria-label="{{ 'customer.order.discount' | t }}">
+                <ul
+                  class="order-discount--cart-list discount--sale-color"
+                  aria-label="{{ 'customer.order.discount' | t }}"
+                >
                   {%- for discount_allocation in item.line_level_discount_allocations -%}
                     <li class="order-discount--item">
-                      <strong>{{ discount_allocation.discount_application.title }} (-<span class="money">{{ discount_allocation.amount | money }}</span>)</strong>
+                      <strong>
+                        {{- discount_allocation.discount_application.title }} (-<span class="money">
+                          {{- discount_allocation.amount | money -}}</span
+                        >)</strong
+                      >
                     </li>
                   {%- endfor -%}
                 </ul>
@@ -144,10 +179,7 @@
         {% endfor %}
       </tbody>
     </table>
-    
-   
-    
-    
+
     <div class="grid cart__row">
       {% if settings.cart_notes_enable %}
         <div class="grid__item two-thirds medium--one-whole small--one-whole">
@@ -159,38 +191,43 @@
         {%- if cart.cart_level_discount_applications != blank -%}
           <div class="cart--order-discount-wrapper custom-font discount--sale-color">
             {%- for discount_application in cart.cart_level_discount_applications -%}
-            <div class="cart--order-discount-wrapper--indiv">
-              <span class="order-discount--cart-title">
-
-              </span>
-              <span class="order-discount">-<span class="money"></span></span>
-            </div>
-            <p>
-              <span class="cart__subtotal-title"><span class="hidden">{{ 'customer.order.discount' | t }}:</span>{{- discount_application.title -}}</span>
-              <span class="h3 cart__subtotal"><span class="money">{{ discount_application.total_allocated_amount | money }}</span></span>
-            </p>
+              <div class="cart--order-discount-wrapper--indiv">
+                <span class="order-discount--cart-title"> </span>
+                <span class="order-discount">-<span class="money"></span></span>
+              </div>
+              <p>
+                <span class="cart__subtotal-title"
+                  ><span class="hidden">{{ 'customer.order.discount' | t }}:</span>
+                  {{- discount_application.title -}}
+                </span>
+                <span class="h3 cart__subtotal"
+                  ><span class="money">{{ discount_application.total_allocated_amount | money }}</span></span
+                >
+              </p>
             {%- endfor -%}
           </div>
         {%- endif -%}
 
-
         <p>
           <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
-          <span class="h3 cart__subtotal"><span class="money">{{ cart.total_price | money }}</span></span>
+          <span class="h3 cart__subtotal"
+            ><span class="money">{{ cart.total_price | money }}</span></span
+          >
         </p>
-        
-        {% assign shipping_value = 15000 %}
-{% assign cart_total = cart.total_price %}
-{% assign shipping_value_left = shipping_value | minus: cart_total %}
-<div style="text-align:center;">
-<p class="free-shipping-threshold-text">
-{% if shipping_value_left > 0 %}
-  You're only {{ shipping_value_left | money }} away from <b>FREE</b> shipping! All orders over $150 are eligible. <b><a href="/collections/">Continue shopping</a> </b>
-{% else %}
-  <b>Your order qualifies for FREE shipping!</b>
-{% endif %}
-</p>
-      </div>
+        {% comment %}
+                  {% assign shipping_value = 15000 %}
+          {% assign cart_total = cart.total_price %}
+          {% assign shipping_value_left = shipping_value | minus: cart_total %}
+          <div style="text-align:center;">
+          <p class="free-shipping-threshold-text">
+          {% if shipping_value_left > 0 %}
+            You're only {{ shipping_value_left | money }} away from <b>FREE</b> shipping! All orders over $150 are eligible. <b><a href="/collections/">Continue shopping</a> </b>
+          {% else %}
+            <b>Your order qualifies for FREE shipping!</b>
+          {% endif %}
+          </p>
+                </div>
+        {% endcomment %}
         {%- capture taxes_shipping_checkout -%}
           {%- if shop.taxes_included and shop.shipping_policy.body != blank -%}
             {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
@@ -203,29 +240,40 @@
           {%- endif -%}
         {%- endcapture -%}
 
-        <div class="cart__shipping rte"><em>{{ taxes_shipping_checkout }}</em></div>
-        
+        <div class="cart__shipping rte">
+          <em>{{ taxes_shipping_checkout }}</em>
+        </div>
+
         <!-- Route Code Edited 03/08/2021 -->
         <div class="route-div"></div>
         <!-- Route Code End -->
 
-        <input type="submit" name="update" class="btn--secondary update-cart cart--button-update" value="{{ 'cart.general.update' | t }}">
-        <input type="submit" name="checkout" class="btn cart--button-checkout" value="{{ 'cart.general.checkout' | t }}">
-        {% if additional_checkout_buttons and settings.enable-additional-checkout-buttons %}
-        <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
+        <input
+          type="submit"
+          name="update"
+          class="btn--secondary update-cart cart--button-update"
+          value="{{ 'cart.general.update' | t }}"
+        >
+        <input
+          type="submit"
+          name="checkout"
+          class="btn cart--button-checkout"
+          value="{{ 'cart.general.checkout' | t }}"
+        >
+        {% if additional_checkout_buttons and settings['enable-additional-checkout-buttons'] %}
+          <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
             {{ content_for_additional_checkout_buttons }}
-        </div>
+          </div>
         {% endif %}
       </div>
     </div>
   </form>
 {% else %}
-<div class="sitewide--title-wrapper">
-
-  <h1 class="page--title">{{ 'cart.general.title' | t }}</h1>
-</div>
-<div class="cart--empty-cart">
-	<p>{{ 'cart.general.empty' | t }}</p>
-	<p>{{ 'cart.general.continue_browsing_html' | t }}</p>
-</div>
+  <div class="sitewide--title-wrapper">
+    <h1 class="page--title">{{ 'cart.general.title' | t }}</h1>
+  </div>
+  <div class="cart--empty-cart">
+    <p>{{ 'cart.general.empty' | t }}</p>
+    <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+  </div>
 {% endif %}
